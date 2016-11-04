@@ -1,0 +1,42 @@
+{
+  "name": "permissive",
+  "description": "A minimalist theme for Ghost.",
+  "demo": "https://demo.andytran.me",
+  "version": "0.0.1",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "engines": {
+      "ghost": ">=0.9.0 <1.0.0"
+  },
+  "license": "MIT",
+  "screenshots": {
+      "desktop": "assets/images/screenshot-desktop.jpg",
+      "mobile": "assets/images/screenshot-mobile.jpg"
+  },
+  "author": {
+    "name": "Andy Tran",
+    "email": "hello@andytran.me",
+    "url": "https://andytran.me"
+  },
+  "gpm": {
+    "type": "theme",
+    "categories": [
+      "Minimal",
+      "Personal Blogs"
+    ]
+  },
+  "keywords": [
+    "ghost",
+    "theme"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/andyhqtran/Permissive.git"
+  },
+  "bugs": {
+    "url": "https://github.com/andyhqtran/Permissive/issues"
+  },
+  "homepage": "https://github.com/andyhqtran/Permissive#readme",
+  "contributors": "https://github.com/andyhqtran/Permissive/graphs/contributors"
+}
