@@ -1,6 +1,12 @@
 # Permissive
 Permissive Theme for [Ghost](https://github.com/tryghost/ghost/).
 
+[![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/andyhqtran/permissive/master/LICENSE)
+[![GitHub contributors](https://img.shields.io/github/contributors/andyhqtran/Permissive.svg)](https://github.com/andyhqtran/Permissive/graphs/contributors)
+[![bitHound Dependencies](https://www.bithound.io/github/andyhqtran/Permissive/badges/dependencies.svg)](https://www.bithound.io/github/andyhqtran/Permissive/master/dependencies/npm)
+[![bitHound Dev Dependencies](https://www.bithound.io/github/andyhqtran/Permissive/badges/devDependencies.svg)](https://www.bithound.io/github/andyhqtran/Permissive/master/dependencies/npm)
+[![Gratipay User](https://img.shields.io/gratipay/user/andyhqtran.svg)]()
+
 To download, visit the [releases](https://github.com/andyhqtran/Permissive/releases) page.
 
 # Copyright & License
