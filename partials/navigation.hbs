@@ -1,0 +1,38 @@
+<nav class="nav" role="navigation">
+  <button
+    class="fab tooltip"
+    data-tooltip="Menu"
+    data-tooltip-direction="e"
+  >
+    {{#if @blog.logo}}
+      <img
+        alt="{{@blog.title}}"
+        class="logo"
+        src="{{@blog.logo}}"
+      />
+    {{else}}
+      {{!-- TODO, create SVG menu icon --}}
+      <span></span>
+      <span></span>
+      <span></span>
+    {{/if}}
+  </button>
+
+  <ul class="nav__menu" role="menu">
+    {{#foreach navigation}}
+      <li
+        class="nav__item nav__item--{{slug}}{{#if current}} nav__item--active{{/if}}"
+        role="presentation"
+      >
+        <a
+          class="fab fab--small tooltip"
+          data-tooltip="{{label}}"
+          data-tooltip-direction="e"
+          href="{{url absolute="true"}}"
+        >
+          <span class="icon icon--{{slug}}"></span>
+        </a>
+      </li>
+    {{/foreach}}
+  </ul>
+</nav>
