@@ -1,4 +1,10 @@
-@import 'modules/base';
+@import 'helpers/variables';
+@import 'helpers/colors';
+@import 'helpers/fonts';
+@import 'helpers/functions';
+@import 'helpers/mixins';
+
+@import 'vendor/normalize';
 
 body,
 html {
@@ -11,4 +17,8 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-@import 'partials/sidebar';
+@import 'base/typography';
+
+@import 'layout/sidebar';
+
+@import 'components/button';
