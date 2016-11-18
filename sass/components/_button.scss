@@ -1,0 +1,17 @@
+.button {
+  background: $white;
+  max-height: 40px;
+  border-radius: 2px;
+  box-shadow: inset 0 0 0 1px $border-color;
+  padding: 12px 20px;
+  box-sizing: border-box;
+  color: $text-primary;
+  font-size: 14px;
+  font-weight: $font-medium;
+
+  &--primary {
+    background: $accent;
+    box-shadow: inset 0 0 0 1px rgba($black, 0.1), 0 2px 0 rgba($accent, 0.2);
+    color: $white;
+  }
+}
