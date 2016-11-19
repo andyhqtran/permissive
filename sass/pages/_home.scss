@@ -1,0 +1,9 @@
+.home-template {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+
+  .content {
+    width: calc(100% - #{$sidebar-width});
+  }
+}

@@ -1,0 +1,13 @@
+.input {
+  display: block;
+  background: $white;
+  width: 100%;
+  height: 40px;
+  border: 0;
+  box-shadow: inset 0 0 0 1px $border-color;
+  padding: 12px 20px;
+  box-sizing: border-box;
+  font-family: $header-font;
+  font-size: rem(14);
+  font-weight: $font-regular;
+}

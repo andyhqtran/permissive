@@ -4,7 +4,7 @@
 @import 'helpers/functions';
 @import 'helpers/mixins';
 
-@import 'vendor/normalize';
+@import 'vendors/normalize';
 
 body,
 html {
@@ -22,3 +22,9 @@ body {
 @import 'layout/sidebar';
 
 @import 'components/button';
+@import 'components/fab';
+@import 'components/input';
+
+@import 'layout/form';
+
+@import 'pages/home';

@@ -1,12 +1,14 @@
 .button {
   background: $white;
   height: 40px;
+  border: 0;
   border-radius: 2px;
   box-shadow: inset 0 0 0 1px $border-color;
   padding: 12px 20px;
   box-sizing: border-box;
   color: $text-primary;
-  font-size: 14px;
+  font-family: $header-font;
+  font-size: rem(14);
   font-weight: $font-medium;
 
   &--primary {
