@@ -1,6 +1,7 @@
-<nav class="nav" role="navigation">
+<nav class="navigation" role="navigation">
   <button
-    class="fab tooltip"
+    class="fab fab--large fab--primary tooltip"
+    id="navigation__toggle"
     data-tooltip="Menu"
     data-tooltip-direction="e"
   >
@@ -18,14 +19,14 @@
     {{/if}}
   </button>
 
-  <ul class="nav__menu" role="menu">
+  <ul class="navigation__menu" role="menu">
     {{#foreach navigation}}
       <li
-        class="nav__item nav__item--{{slug}}{{#if current}} nav__item--active{{/if}}"
+        class="navigation__item navigation__item--{{slug}}{{#if current}} navigation__item--active{{/if}}"
         role="presentation"
       >
         <a
-          class="fab fab--small tooltip"
+          class="fab fab--primary tooltip"
           data-tooltip="{{label}}"
           data-tooltip-direction="e"
           href="{{url absolute="true"}}"

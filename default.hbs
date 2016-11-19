@@ -25,11 +25,18 @@
   </head>
   <body class="{{body_class}}">
 
+    {{!-- Navigation --}}
+    {{#if @blog.navigation}}
+      {{navigation}}
+    {{/if}}
+
     {{!-- All the main content gets inserted here, index.hbs, post.hbs, etc --}}
     {{{body}}}
 
     {{!-- JavaScript --}}
-    <script type="text/javascript" src="//code.jquery.com/jquery-1.12.0.min.js"></script>
+    <script type="text/javascript" src="{{asset "js/jquery.js"}}"></script>
+    <script type="text/javascript" src="{{asset "js/TweenMax.js"}}"></script>
+    <script type="text/javascript" src="{{asset "js/TimelineMax.js"}}"></script>
 
     {{!-- Ghost outputs important scripts and data with this tag --}}
     {{ghost_foot}}

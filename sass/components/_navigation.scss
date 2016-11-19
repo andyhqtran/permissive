@@ -1,0 +1,30 @@
+.navigation {
+  position: fixed;
+  top: 60px;
+  left: 60px;
+
+  > .fab {
+    margin: 0 0 10px;
+  }
+
+  &__menu {
+    display: none;
+    align-items: center;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  &__item {
+    display: block;
+    margin: 0 0 10px;
+    padding: 0;
+  }
+
+  &--active {
+    .navigation__menu {
+      display: flex;
+    }
+  }
+}
