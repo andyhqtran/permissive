@@ -30,20 +30,23 @@
     <div class="widget">
       <div class="tabs">
         <nav class="tabs__list">
-          <a class="tabs__item tabs__item--active" href="#discover">Discover</a>
-          <a class="tabs__item" href="#stories">Stories</a>
-          <a class="tabs__item" href="#learn">Learn</a>
+          <a class="tabs__item tabs__item--active" data-tab="1" href="#discover">Discover</a>
+          <a class="tabs__item" data-tab="2" href="#stories">Stories</a>
+          <a class="tabs__item" data-tab="3" href="#learn">Learn</a>
         </nav>
         <div class="tabs__content">
-          <div class="tabs__panel">
+          <div class="tabs__panel tabs__panel--active" data-tab="1">
+            Panel 1
             {{!-- TODO, display recent posts --}}
             {{!-- {{> "loop"}} --}}
           </div>
-          <div class="tabs__panel">
+          <div class="tabs__panel" data-tab="2">
+            Panel 2
             {{!-- TODO, display recommend stories --}}
             {{!-- {{> "loop"}} --}}
           </div>
-          <div class="tabs__panel">
+          <div class="tabs__panel" data-tab="3">
+            Panel 3
             {{!-- TODO, display collection of tutorials --}}
             {{!-- {{> "loop"}} --}}
           </div>

@@ -11,7 +11,9 @@
   font-family: $header-font;
   font-size: rem(14);
   font-weight: $font-medium;
+  line-height: rem(40);
   text-align: center;
+  text-decoration: none;
   cursor: pointer;
 
   &--large {

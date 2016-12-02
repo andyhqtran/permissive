@@ -1,0 +1,37 @@
+.tabs {
+  font-family: $header-font;
+  font-size: rem(14);
+  font-weight: $font-medium;
+
+  &__list {
+    display: flex;
+    flex-direction: row;
+    margin: 0 0 20px;
+  }
+
+  &__item {
+    display: inline-block;
+    margin: 0 40px 0 0;
+    padding: 0 0 20px;
+    color: $text-body;
+    line-height: 1;
+    text-decoration: none;
+
+    &:last-child {
+      margin: 0;
+    }
+
+    &--active {
+      box-shadow: inset 0 -2px 0 $accent;
+      color: $accent;
+    }
+  }
+
+  &__panel {
+    display: none;
+
+    &--active {
+      display: block;
+    }
+  }
+}
