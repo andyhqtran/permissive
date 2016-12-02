@@ -3,6 +3,7 @@ html {
 }
 
 body {
+  color: $text-body;
   font-family: $body-font;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -17,7 +18,9 @@ h4,
 h5,
 h6 {
   margin: 0 0 20px;
+  color: $text-primary;
   font-family: $header-font;
+  font-weight: $font-bold;
 }
 
 h1 {

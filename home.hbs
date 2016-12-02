@@ -36,19 +36,55 @@
         </nav>
         <div class="tabs__content">
           <div class="tabs__panel tabs__panel--active" data-tab="1">
-            Panel 1
-            {{!-- TODO, display recent posts --}}
-            {{!-- {{> "loop"}} --}}
+            {{#get "posts" limit="3" order="published_at asc"}}
+              {{#foreach posts}}
+              <article>
+                <header>
+                  <h6>
+                    <a href="{{url}}">{{title}}</a>
+                  </h6>
+                  <span>{{date format="MMMM DD, YYYY"}}</span>
+                </header>
+                <section>
+                  <p>{{excerpt characters="110"}}</p>
+                </section>
+              </article>
+              {{/foreach}}
+            {{/get}}
           </div>
           <div class="tabs__panel" data-tab="2">
-            Panel 2
-            {{!-- TODO, display recommend stories --}}
-            {{!-- {{> "loop"}} --}}
+            {{#get "posts" filter="tags:[case-studies,stories]" limit="3" order="published_at asc"}}
+              {{#foreach posts}}
+              <article>
+                <header>
+                  <h6>
+                    <a href="{{url}}">{{title}}</a>
+                  </h6>
+                  <span>{{date format="MMMM DD, YYYY"}}</span>
+                </header>
+                <section>
+                  <p>{{excerpt characters="110"}}</p>
+                </section>
+              </article>
+              {{/foreach}}
+            {{/get}}
           </div>
           <div class="tabs__panel" data-tab="3">
-            Panel 3
-            {{!-- TODO, display collection of tutorials --}}
-            {{!-- {{> "loop"}} --}}
+            {{#get "posts" filter="tags:[tutorial,learn]" limit="3" order="published_at asc"}}
+              {{#foreach posts}}
+              <article>
+                <header>
+                  <h6>
+                    <a href="{{url}}">{{title}}</a>
+                  </h6>
+                  <span>{{date format="MMMM DD, YYYY"}}</span>
+                </header>
+                <section>
+                  <p>{{excerpt characters="110"}}</p>
+                </section>
+              </article>
+              {{/foreach}}
+            {{/get}}
           </div>
         </div>
       </div>
