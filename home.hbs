@@ -51,18 +51,18 @@
       </div>
     </div>
 
-    <div class="widget widget--tags">
-      <div class="widget__title">Topics</div>
-      <div class="widget__content">
-        {{#if @labs.publicAPI}}
+    {{#if @labs.publicAPI}}
+      <div class="widget widget--tags">
+        <div class="widget__title">Topics</div>
+        <div class="widget__content">
           {{#get "tags" limit="all" include="count.posts"}}
             {{#foreach tags}}
               <a class="button" href="{{url}}">{{name}}</a>
             {{/foreach}}
           {{/get}}
-        {{/if}}
+        </div>
       </div>
-    </div>
+    {{/if}}
   </div>
 
   {{#if @labs.subscribers}}
