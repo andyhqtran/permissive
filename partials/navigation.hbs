@@ -1,9 +1,7 @@
 <nav class="navigation" role="navigation">
   <button
-    class="fab fab--large fab--primary tooltip"
+    class="fab fab--large fab--primary"
     id="navigation__toggle"
-    data-tooltip="Menu"
-    data-tooltip-direction="e"
   >
     {{#if @blog.logo}}
       <img
@@ -26,12 +24,10 @@
         role="presentation"
       >
         <a
-          class="fab fab--primary tooltip"
-          data-tooltip="{{label}}"
-          data-tooltip-direction="e"
+          class="fab fab--primary"
           href="{{url absolute="true"}}"
         >
-          <span class="icon icon--{{slug}}"></span>
+          <span class="navigation__label">{{label}}</span>
         </a>
       </li>
     {{/foreach}}

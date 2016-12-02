@@ -23,10 +23,26 @@
     counter-increment: navigation;
 
     .fab {
+      position: relative;
+
       &:before {
         content: counter(navigation, lower-roman);
       }
     }
+
+    &--active {
+      .navigation__label {
+        color: $text-primary;
+      }
+    }
+  }
+
+  &__label {
+    position: absolute;
+    top: 50%;
+    left: 100%;
+    transform: translateX(10px) translateY(-50%);
+    color: $text-body;
   }
 
   &--active {
