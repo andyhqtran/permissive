@@ -6,4 +6,23 @@
   .content {
     width: calc(100% - #{$sidebar-width});
   }
+
+  .site-info {
+    position: fixed;
+    bottom: 60px;
+    left: 60px;
+    max-width: 400px;
+
+    &__title {
+      margin: 0 0 10px;
+    }
+
+    &__description {
+      display: block;
+      margin: 0;
+      color: $text-secondary;
+      font-size: rem(24);
+      line-height: rem(32);
+    }
+  }
 }

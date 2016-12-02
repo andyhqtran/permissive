@@ -7,12 +7,12 @@
   id="content"
   role="main"
   {{#if @blog.cover}}
-    style="url({{@blog.cover}})"
+    style="background: url({{@blog.cover}}) right bottom no-repeat fixed; background-size: cover;"
   {{/if}}
 >
   <div class="site-info">
     <h1 class="site-info__title">{{@blog.title}}</h1>
-    <h2 class="site-info__description">{{@blog.description}}</h2>
+    <p class="site-info__description">{{@blog.description}}</p>
     {{!-- TODO, add in social menu --}}
     {{!-- {{> social-menu}} --}}
   </div>
@@ -27,7 +27,42 @@
 
   {{!-- Sidebar Content --}}
   <div class="sidebar__content">
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quod autem in homine praestantissimum atque optimum est, id deseruit. Quae similitudo in genere etiam humano apparet. Nam Pyrrho, Aristo, Erillus iam diu abiecti. Quod totum contra est. Dat enim intervalla et relaxat. Duo Reges: constructio interrete. Equidem etiam Epicurum, in physicis quidem, Democriteum puto. Nihil opus est exemplis hoc facere longius.
+    <div class="widget">
+      <div class="tabs">
+        <nav class="tabs__list">
+          <a class="tabs__item tabs__item--active" href="#discover">Discover</a>
+          <a class="tabs__item" href="#stories">Stories</a>
+          <a class="tabs__item" href="#learn">Learn</a>
+        </nav>
+        <div class="tabs__content">
+          <div class="tabs__panel">
+            {{!-- TODO, display recent posts --}}
+            {{!-- {{> "loop"}} --}}
+          </div>
+          <div class="tabs__panel">
+            {{!-- TODO, display recommend stories --}}
+            {{!-- {{> "loop"}} --}}
+          </div>
+          <div class="tabs__panel">
+            {{!-- TODO, display collection of tutorials --}}
+            {{!-- {{> "loop"}} --}}
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="widget widget--tags">
+      <div class="widget__title">Topics</div>
+      <div class="widget__content">
+        {{#if @labs.publicAPI}}
+          {{#get "tags" limit="all" include="count.posts"}}
+            {{#foreach tags}}
+              <a class="button" href="{{url}}">{{name}}</a>
+            {{/foreach}}
+          {{/get}}
+        {{/if}}
+      </div>
+    </div>
   </div>
 
   {{#if @labs.subscribers}}

@@ -1,0 +1,19 @@
+.widget {
+  margin: 0 0 40px;
+
+  &__title {
+    margin: 0 0 20px;
+    color: $text-secondary;
+    font-family: $header-font;
+    font-size: rem(12);
+    font-weight: $font-medium;
+    line-height: 1;
+    text-transform: uppercase;
+  }
+
+  &--tags {
+    .button {
+      margin: 0 10px 10px 0;
+    }
+  }
+}

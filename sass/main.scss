@@ -11,12 +11,6 @@ html {
   height: 100%;
 }
 
-body {
-  font-family: $body-font;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
 @import 'base/typography';
 
 @import 'layout/sidebar';
@@ -28,5 +22,6 @@ body {
 @import 'layout/form';
 
 @import 'components/navigation';
+@import 'components/widget';
 
 @import 'pages/home';
