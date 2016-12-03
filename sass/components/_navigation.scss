@@ -26,7 +26,7 @@
       position: relative;
 
       &:before {
-        content: counter(navigation, lower-roman);
+        content: counter(navigation, upper-roman);
       }
     }
 
