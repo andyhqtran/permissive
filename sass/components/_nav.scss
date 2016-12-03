@@ -1,0 +1,36 @@
+.nav {
+  &__menu {
+    display: flex;
+    flex-direction: row;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    &--vertical {
+      flex-direction: column;
+    }
+  }
+
+  &__item {
+    margin: 0 10px;
+
+    &:first-child {
+      margin-left: 0;
+    }
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  &--social {
+    .icon {
+      display: block;
+      width: 12px;
+      height: 12px;
+      color: $text-body;
+      line-height: 12px;
+      text-align: center;
+    }
+  }
+}

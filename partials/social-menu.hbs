@@ -1,73 +1,80 @@
 <nav class="nav nav--social">
   <ul class="nav__menu">
     {{!-- Facebook --}}
-    {{!-- <li class="nav__item">
-      <a href="#" target="_blank">
-        <span class="icon icon--facebook"></span>
+    <li class="nav__item">
+      <a href="{{facebook_url @blog.facebook}}" target="_blank">
+        <span class="icon ion-social-facebook"></span>
       </a>
-    </li> --}}
+    </li>
 
     {{!-- Instagram --}}
     {{!-- <li class="nav__item">
       <a href="#" target="_blank">
-        <span class="icon icon--instagram"></span>
+        <span class="icon ion-social-instagram"></span>
       </a>
     </li> --}}
 
     {{!-- Twitter --}}
-    {{!-- <li class="nav__item">
-      <a href="#" target="_blank">
-        <span class="icon icon--twitter"></span>
+    <li class="nav__item">
+      <a href="{{twitter_url @blog.twitter}}" target="_blank">
+        <span class="icon ion-social-twitter"></span>
       </a>
-    </li> --}}
+    </li>
 
     {{!-- Github --}}
     {{!-- <li class="nav__item">
       <a href="#" target="_blank">
-        <span class="icon icon--github"></span>
+        <span class="icon ion-social-github"></span>
       </a>
     </li> --}}
 
     {{!-- CodePen --}}
     {{!-- <li class="nav__item">
       <a href="#" target="_blank">
-        <span class="icon icon--codepen"></span>
+        <span class="icon ion-social-codepen"></span>
       </a>
     </li> --}}
 
     {{!-- Dribbble --}}
     {{!-- <li class="nav__item">
       <a href="#" target="_blank">
-        <span class="icon icon--dribbble"></span>
+        <span class="icon ion-social-dribbble"></span>
       </a>
     </li> --}}
 
     {{!-- Behance --}}
     {{!-- <li class="nav__item">
       <a href="#" target="_blank">
-        <span class="icon icon--behance"></span>
+        <span class="icon ion-social-behance"></span>
       </a>
     </li> --}}
 
     {{!-- YouTube --}}
     {{!-- <li class="nav__item">
       <a href="#" target="_blank">
-        <span class="icon icon--youtube"></span>
+        <span class="icon ion-social-youtube"></span>
       </a>
     </li> --}}
 
     {{!-- Vimeo --}}
     {{!-- <li class="nav__item">
       <a href="#" target="_blank">
-        <span class="icon icon--vimeo"></span>
+        <span class="icon ion-social-vimeo"></span>
       </a>
     </li> --}}
 
     {{!-- YouTube --}}
     {{!-- <li class="nav__item">
       <a href="#" target="_blank">
-        <span class="icon icon--youtube"></span>
+        <span class="icon ion-social-youtube"></span>
       </a>
     </li> --}}
+
+    {{!-- RSS --}}
+    <li class="nav__item">
+      <a href="{{@blog.url}}/rss/">
+        <span class="icon ion-social-rss"></span>
+      </a>
+    </li>
   </ul>
 </nav>
