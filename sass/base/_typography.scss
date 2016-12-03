@@ -7,8 +7,68 @@ body {
   font-family: $body-font;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  font-size: 14px;
+  font-size: rem(14);
+  font-weight: $font-regular;
   line-height: 26px;
+}
+
+a {
+  color: $text-primary;
+}
+
+b {
+  font-weight: $font-medium;
+}
+
+hr {
+  background: #EEEEEE;
+  width: 100%;
+  height: 1px;
+  border: 0;
+  margin: 40px 0;
+}
+
+
+pre {
+  background: #F5F5F5;
+  width: 100%;
+  border: 1px solid #EEEEEE;
+  border-radius: 3px;
+  margin: 0 0 20px;
+  padding: 20px;
+  box-sizing: border-box;
+  font-family: Inconsolata, monospace, sans-serif;
+  font-size: rem(16);
+  white-space: pre;
+  overflow: auto;
+
+  code,
+  tt {
+    background: transparent;
+    border: 0;
+    padding: 0;
+    font-size: inherit;
+    white-space: pre-wrap;
+  }
+}
+
+p {
+  margin: 0 0 20px;
+
+  &:only-child,
+  &:last-of-type {
+    margin: 0;
+  }
+}
+
+mark {
+  background-color: #FDFFB6;
+}
+
+blockquote {
+  border-left: 4px solid $accent;
+  margin: 0 0 20px -20px;
+  padding: 20px;
 }
 
 h1,
@@ -20,11 +80,39 @@ h6 {
   margin: 0 0 20px;
   color: $text-primary;
   font-family: $header-font;
-  font-weight: $font-bold;
+  font-weight: $font-medium;
+  line-height: normal;
 }
 
 h1 {
-  font-size: rem(60);
-  letter-spacing: -1.5px;
-  line-height: rem(71);
+  font-size: rem(40);
+  font-weight: $font-heavy;
+  letter-spacing: -1.2px;
+}
+
+h2 {
+  font-size: rem(24);
+  letter-spacing: -0.5;
+}
+
+h3 {
+  font-size: rem(20);
+}
+
+h4 {
+  font-size: rem(18);
+}
+
+h5 {
+  font-size: rem(16);
+}
+
+h6 {
+  font-size: rem(14);
+}
+
+img {
+  display: block;
+  width: 100%;
+  max-width: 100%;
 }

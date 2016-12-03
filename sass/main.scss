@@ -13,8 +13,11 @@ html {
 
 @import 'base/typography';
 
+@import 'layout/content';
+@import 'layout/post';
 @import 'layout/sidebar';
 
+@import 'components/article';
 @import 'components/button';
 @import 'components/fab';
 @import 'components/input';

@@ -15,6 +15,9 @@
 
     &__title {
       margin: 0 0 10px;
+      font-size: rem(60);
+      font-weight: $font-bold;
+      letter-spacing: -1.5px;
     }
 
     &__description {

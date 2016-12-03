@@ -43,7 +43,7 @@
           </nav>
           <div class="tabs__content">
             <div class="tabs__panel tabs__panel--active" data-tab="1">
-              {{#get "posts" limit="3" order="published_at asc"}}
+              {{#get "posts" limit="3" order="published_at desc"}}
                 {{#foreach posts}}
                 <article>
                   <header>
@@ -60,7 +60,7 @@
               {{/get}}
             </div>
             <div class="tabs__panel" data-tab="2">
-              {{#get "posts" filter="tags:[case-studies,stories]" limit="3" order="published_at asc"}}
+              {{#get "posts" filter="tags:[case-studies,stories]" limit="3" order="published_at desc"}}
                 {{#foreach posts}}
                 <article>
                   <header>
@@ -77,7 +77,7 @@
               {{/get}}
             </div>
             <div class="tabs__panel" data-tab="3">
-              {{#get "posts" filter="tags:[tutorial,learn]" limit="3" order="published_at asc"}}
+              {{#get "posts" filter="tags:[tutorial,learn]" limit="3" order="published_at desc"}}
                 {{#foreach posts}}
                 <article>
                   <header>

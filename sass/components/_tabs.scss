@@ -1,7 +1,5 @@
 .tabs {
-  font-family: $header-font;
-  font-size: rem(14);
-  font-weight: $font-medium;
+  font-family: $header-font;;
 
   &__list {
     display: flex;
@@ -14,6 +12,8 @@
     margin: 0 40px 0 0;
     padding: 0 0 20px;
     color: $text-body;
+    font-size: rem(14);
+    font-weight: $font-medium;
     line-height: 1;
     text-decoration: none;
 
