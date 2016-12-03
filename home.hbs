@@ -100,7 +100,7 @@
       <div class="widget widget--tags">
         <div class="widget__title">Topics</div>
         <div class="widget__content">
-          {{#get "tags" limit="all" include="count.posts"}}
+          {{#get "tags" limit="15" include="count.posts"}}
             {{#foreach tags}}
               <a class="button" href="{{url}}">{{name}}</a>
             {{/foreach}}
