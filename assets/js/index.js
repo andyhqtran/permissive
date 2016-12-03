@@ -4,6 +4,18 @@ $(document).ready(function() {
    */
   if ($('.tabs').length > 0) {
     $('.tabs').each(function() {
+      var windowHash = window.location.hash;
+
+      if (windowHash) {
+        var tabId = $('.tabs__item[href="' + windowHash + '"]').attr('data-tab');
+
+        $('.tabs__item--active').removeClass('tabs__item--active');
+        $('.tabs__item[href="' + windowHash + '"]').addClass('tabs__item--active');
+
+        $('.tabs__panel--active').removeClass('tabs__panel--active');
+        $('.tabs__panel[data-tab=' + tabId + ']').addClass('tabs__panel--active');
+      }
+
       $(this).find('.tabs__item').on('click', function() {
         var tabId = $(this).attr('data-tab');
 
