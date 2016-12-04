@@ -2,7 +2,7 @@
  * External dependencies
  */
 import gulp from 'gulp';
-import livereload from 'gulp-livereload';
+import refresh from 'gulp-refresh';
 import sass from 'gulp-sass';
 import sourcemaps from 'gulp-sourcemaps';
 
@@ -12,11 +12,11 @@ gulp.task('sass', () => {
     .pipe(sass().on('error', sass.logError))
     .pipe(sourcemaps.write())
     .pipe(gulp.dest('./assets/css'))
-    .pipe(livereload());
+    .pipe(refresh());
 });
 
 gulp.task('sass:watch', () => {
-  livereload.listen();
+  refresh.listen();
 
   gulp.watch('./sass/**/*.scss', ['sass']);
 });
