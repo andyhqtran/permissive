@@ -50,4 +50,13 @@
       display: flex;
     }
   }
+
+  @media (max-width: 768px) {
+    top: auto;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+
+    // TODO, turn this into menu bar for mobile
+  }
 }
