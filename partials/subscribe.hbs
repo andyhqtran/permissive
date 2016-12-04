@@ -1,14 +1,16 @@
-<div class="subscribe">
-  <header class="subscribe__header">
-    <h3 class="subscribe__title">Subscribe to {{@blog.title}}</h3>
-    <p class="subscribe__sub-title">Get the latest posts delivered right to your inbox.</p>
-  </header>
+{{#if @labs.subscribers}}
+  <div class="subscribe">
+    <header class="subscribe__header">
+      <h3 class="subscribe__title">Subscribe to {{@blog.title}}</h3>
+      <p class="subscribe__sub-title">Get the latest posts delivered right to your inbox.</p>
+    </header>
 
-  <section class="subscribe__content">
-    {{subscribe_form}}
-  </section>
+    <section class="subscribe__content">
+      {{subscribe_form}}
+    </section>
 
-  <footer class="subscribe__footer">
-    or subscribe <a href="#"><b>via RSS</b></a> with Feedly!
-  </footer>
-</div>
+    <footer class="subscribe__footer">
+      or subscribe <a href="#"><b>via RSS</b></a> with Feedly!
+    </footer>
+  </div>
+{{/if}}
