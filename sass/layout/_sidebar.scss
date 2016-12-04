@@ -25,4 +25,23 @@
     padding: 30px 60px;
     box-sizing: border-box;
   }
+
+  @media (max-width: 1024px) {
+    width: 100%;
+    height: auto;
+    overflow: initial;
+
+    &__content {
+      height: auto;
+      overflow: initial;
+    }
+
+    &__footer {
+      position: relative;
+    }
+
+    .input {
+      flex-grow: 1;
+    }
+  }
 }
