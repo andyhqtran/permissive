@@ -109,19 +109,22 @@
       </div>
     {{else}}
       <div class="widget">
-        {{#foreach posts}}
-          <article>
-            <header>
-              <h6>
-                <a href="{{url}}">{{title}}</a>
-              </h6>
-              <span>{{date format="MMMM DD, YYYY"}}</span>
-            </header>
-            <section>
-              <p>{{excerpt characters="110"}}</p>
-            </section>
-          </article>
-        {{/foreach}}
+        <div class="widget__title">Recent</div>
+        <div class="widget__content">
+          {{#foreach posts}}
+            <article>
+              <header>
+                <h6>
+                  <a href="{{url}}">{{title}}</a>
+                </h6>
+                <span>{{date format="MMMM DD, YYYY"}}</span>
+              </header>
+              <section>
+                <p>{{excerpt characters="110"}}</p>
+              </section>
+            </article>
+          {{/foreach}}
+        </div>
       </div>
     {{/if}}
   </div>
