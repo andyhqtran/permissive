@@ -1,3 +1,4 @@
+
 .button {
   display: inline-block;
   background: $white;
@@ -12,7 +13,13 @@
   font-size: rem(14);
   font-weight: $font-medium;
   line-height: rem(40);
+  text-align: center;
   text-decoration: none;
+  cursor: pointer;
+
+  &--block {
+    display: block;
+  }
 
   &--primary {
     background: $accent;

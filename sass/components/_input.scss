@@ -1,7 +1,8 @@
+
 .input {
-  display: block;
+  display: inline-block;
   background: $white;
-  width: 100%;
+  min-width: 220px;
   height: 40px;
   border: 0;
   border-radius: 2px;
@@ -11,4 +12,9 @@
   font-family: $header-font;
   font-size: rem(14);
   font-weight: $font-regular;
+
+  &--block {
+    display: block;
+    width: 100%;
+  }
 }

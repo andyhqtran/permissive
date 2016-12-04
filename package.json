@@ -4,7 +4,10 @@
   "demo": "https://demo.andytran.me",
   "version": "0.0.1",
   "scripts": {
-    "start": "concurrently \"gulp sass\" \"gulp sass:watch\""
+    "start": "concurrently \"gulp sass\" \"gulp sass:watch\"",
+    "lint": "npm run lint-sass",
+    "lint-js": "eslint ./assets/js",
+    "lint-sass": "sass-lint ./sass"
   },
   "engines": {
     "ghost": ">=0.9.0 <1.0.0"

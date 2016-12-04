@@ -1,9 +1,13 @@
 .post {
-  background: $white;
+  background: rgba($white, 0.98);
   width: calc(100% - 88px);
   height: 100%;
   margin: 0 0 0 auto;
-  padding: 100px 0 0;
+  padding: 120px 0 0;
   box-sizing: border-box;
   overflow-y: auto;
+
+  @media (max-width: 768px) {
+    width: 100%;
+  }
 }

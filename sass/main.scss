@@ -17,10 +17,14 @@ html {
 @import 'layout/post';
 @import 'layout/sidebar';
 
+@import 'components/author';
 @import 'components/article';
 @import 'components/button';
 @import 'components/fab';
+@import 'components/form';
 @import 'components/input';
+@import 'components/subscribers';
+@import 'components/third-party-block';
 
 @import 'layout/form';
 
