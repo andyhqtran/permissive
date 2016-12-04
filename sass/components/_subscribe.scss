@@ -1,4 +1,4 @@
-.subscribers {
+.subscribe {
   background: $white;
   border: 1px solid $border-color;
   border-radius: 2px;
@@ -16,7 +16,8 @@
 
   &__content {
     .form {
-      margin: 0 0 10px;
+      display: inline-block;
+      margin: 0 auto 10px;
 
       &__group {
         @media (max-width: 600px) {
@@ -34,20 +35,19 @@
         }
       }
     }
+  }
 
-    p {
-      color: $text-secondary;
-      font-size: rem(12);
-      line-height: normal;
-    }
+  &__footer {
+    color: $text-secondary;
+    font-size: rem(12);
   }
 
   @media (max-width: 600px) {
-    background: #FAFAFA;
     flex-direction: column;
-    padding: 60px 60px 50px;
+    background: #FAFAFA;
     border-right: 0;
     border-left: 0;
     border-radius: 0;
+    padding: 60px 60px 50px;
   }
 }

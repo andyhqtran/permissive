@@ -1,0 +1,21 @@
+{{#author}}
+  <div class="author" id="{{id}}">
+    <figure class="author__avatar">
+      <a href="{{url}}">
+        <img alt="{{name}}" src="{{image}}" />
+      </a>
+    </figure>
+    <h6 class="author__title"><a href="{{url}}">{{name}}</a></h6>
+    <p class="author__description">{{bio}}</p>
+    <div class="author__meta">
+      <div class="author__location">
+        <span class="icon ion-location"></span>
+        <span>{{location}}</span>
+      </div>
+      <div class="author__website">
+        <span class="icon ion-link"></span>
+        <a href="{{website}}" target="_blank">{{website}}</a>
+      </div>
+    </div>
+  </div>
+{{/author}}

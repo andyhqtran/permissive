@@ -1,0 +1,27 @@
+<form
+  action="{{action}}"
+  class="form {{form_class}}"
+  method="post"
+>
+    {{hidden}}
+
+    {{#if label}}
+      <label
+        class="form__label"
+        for="subscribe"
+      >
+        {{label}}
+      </label>
+    {{/if}}
+
+    <div class="form__group{{#if error}} form__group--error{{/if}}">
+      {{input_email class="input {{input_class}}" placeholder=placeholder value=email autofocus=autofocus}}
+      <button class="button button--primary {{button_class}}" type="submit">Subscribe</button>
+    </div>
+
+    {{script}}
+</form>
+
+{{#if error}}
+    <p class="main-error">{{{error.message}}}</p>
+{{/if}}

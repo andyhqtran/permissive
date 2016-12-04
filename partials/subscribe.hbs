@@ -1,24 +1,14 @@
-<form class="form">
-  <label
-    class="form__label"
-    for="subscribe"
-  >
-    Subscribe to Newsletter
-  </label>
+<div class="subscribe">
+  <header class="subscribe__header">
+    <h3 class="subscribe__title">Subscribe to {{@blog.title}}</h3>
+    <p class="subscribe__sub-title">Get the latest posts delivered right to your inbox.</p>
+  </header>
 
-  <div class="form__group">
-    <input
-      class="input"
-      id="subscribe"
-      placeholder="Email Address"
-      type="email"
-      required
-    />
-    <button
-      class="button button--primary"
-      type="submit"
-    >
-      Subscribe
-    </button>
-  </div>
-</form>
+  <section class="subscribe__content">
+    {{subscribe_form}}
+  </section>
+
+  <footer class="subscribe__footer">
+    or subscribe <a href="#"><b>via RSS</b></a> with Feedly!
+  </footer>
+</div>
