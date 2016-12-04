@@ -6,7 +6,7 @@
   "scripts": {
     "start": "concurrently \"gulp sass\" \"gulp sass:watch\"",
     "lint": "npm run lint-sass",
-    "lint-js": "eslint ./assets/js",
+    "lint-js": "eslint .",
     "lint-sass": "sass-lint ./sass"
   },
   "engines": {
@@ -53,11 +53,11 @@
   },
   "devDependencies": {
     "concurrently": "3.1.0",
-    "eslint": "^3.9.1",
+    "eslint": "3.11.1",
     "eslint-config-airbnb": "13.0.0",
     "eslint-plugin-import": "2.2.0",
-    "eslint-plugin-jsx-a11y": "3.0.1",
-    "eslint-plugin-react": "6.6.0",
+    "eslint-plugin-jsx-a11y": "2.2.2",
+    "eslint-plugin-react": "6.7.1",
     "sass-lint": "1.10.2"
   }
 }
