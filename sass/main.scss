@@ -13,10 +13,6 @@ html {
 
 @import 'base/typography';
 
-@import 'layout/content';
-@import 'layout/post';
-@import 'layout/sidebar';
-
 @import 'components/author';
 @import 'components/article';
 @import 'components/button';
@@ -24,12 +20,17 @@ html {
 @import 'components/input';
 @import 'components/subscribe';
 @import 'components/third-party-block';
-
-@import 'layout/form';
-
 @import 'components/nav';
 @import 'components/navigation';
+@import 'components/project';
 @import 'components/tabs';
 @import 'components/widget';
 
+@import 'layout/content';
+@import 'layout/form';
+@import 'layout/page';
+@import 'layout/post';
+@import 'layout/sidebar';
+
 @import 'pages/home';
+@import 'pages/projects';

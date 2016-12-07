@@ -1,0 +1,28 @@
+.project {
+  background: $white;
+  border: 1px solid $border-color;
+  border-radius: 2px;
+  overflow: hidden;
+
+  &__header {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  &__title {
+    order: 2;
+    margin: 0;
+  }
+
+  &__sub-title {
+    order: 1;
+    margin: 0 0 10px;
+    color: $text-secondary;
+    font-size: rem(12);
+  }
+
+  &__content {
+    padding: 20px;
+  }
+}

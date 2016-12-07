@@ -1,3 +1,4 @@
+// Button (Elements)
 button,
 .button {
   display: inline-block;
@@ -17,6 +18,13 @@ button,
   text-decoration: none;
   cursor: pointer;
 
+  span {
+    vertical-align: middle;
+  }
+}
+
+// Button (Modifiers)
+.button {
   &--block {
     display: block;
   }

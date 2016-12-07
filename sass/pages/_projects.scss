@@ -1,0 +1,23 @@
+.page-template-projects {
+  .project-grid {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    max-width: 700px;
+    margin: 0 auto;
+  }
+
+  .project {
+    width: calc(50% - 10px);
+    margin: 0 10px 20px;
+    box-sizing: border-box;
+
+    &:nth-child(2n - 1) {
+      margin-left: 0;
+    }
+
+    &:nth-child(2n) {
+      margin-right: 0;
+    }
+  }
+}
