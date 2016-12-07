@@ -5,9 +5,10 @@
   "version": "0.0.1",
   "scripts": {
     "start": "concurrently \"gulp sass\" \"gulp sass:watch\"",
-    "lint": "npm run lint-sass",
+    "lint": "npm run lint-js && npm run lint-sass",
     "lint-js": "eslint .",
-    "lint-sass": "sass-lint ./sass"
+    "lint-sass": "sass-lint ./sass",
+    "test": "npm run lint"
   },
   "engines": {
     "ghost": ">=0.9.0 <1.0.0"
