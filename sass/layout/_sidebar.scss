@@ -29,6 +29,7 @@
   @media (max-width: 1024px) {
     width: 100%;
     height: auto;
+    max-height: none;
     overflow: initial;
 
     &__content {
@@ -37,11 +38,15 @@
     }
 
     &__footer {
-      position: relative;
+      // position: relative;
     }
 
     .input {
       flex-grow: 1;
     }
+  }
+
+  @media (max-width: 768px) {
+    margin-bottom: 60px;
   }
 }

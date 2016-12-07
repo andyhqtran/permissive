@@ -53,11 +53,75 @@
   }
 
   @media (max-width: 768px) {
+    z-index: 2;
     top: auto;
     bottom: 0;
     left: 0;
+    background: $white;
     width: 100%;
+    height: 60px;
+    border-top: 1px solid $border-color;
 
-    // TODO, turn this into menu bar for mobile
+    .fab--large {
+      display: none;
+    }
+
+    &__menu {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      height: 100%;
+    }
+
+    &__item {
+      width: 100%;
+      height: 100%;
+      margin: 0;
+
+      .fab {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: center;
+        background: none;
+        width: 100%;
+        height: 100%;
+        box-shadow: none;
+        line-height: normal;
+        text-align: center;
+
+        &:before {
+          display: block;
+          background: $text-body;
+          width: 24px;
+          height: 24px;
+          border-radius: 100%;
+          margin: 0 0 4px;
+          font-size: rem(10);
+          line-height: rem(24);
+          text-align: center;
+        }
+      }
+
+      &--active {
+        .fab {
+          &:before {
+            background: $accent;
+          }
+        }
+
+        .navigation__label {
+          color: $accent;
+        }
+      }
+    }
+
+    &__label {
+      position: relative;
+      top: auto;
+      left: auto;
+      transform: none;
+      font-size: rem(10);
+    }
   }
 }
