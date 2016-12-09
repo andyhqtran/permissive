@@ -51,8 +51,25 @@
     }
   }
 
+  .site-footer {
+    display: flex;
+    color: $text-secondary;
+    font-size: rem(10);
+
+    a {
+      color: $text-secondary;
+      font-family: $header-font;
+      font-weight: $font-semibold;
+      text-decoration: none;
+    }
+
+    &__copyright {
+      margin-right: 10px;
+    }
+  }
+
   .nav--social {
-    margin: 20px 0 0;
+    margin: 20px 0;
   }
 
   @media (max-width: 1024px) {
