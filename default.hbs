@@ -21,6 +21,9 @@
 
     {{!-- Stylesheets --}}
     <link rel="stylesheet" type="text/css" href="{{asset "css/ionicons.min.css"}}" />
+    {{#if post}}
+        <link rel="stylesheet" type="text/css" href="{{asset "css/prism.css"}}" />
+    {{/if}}
     <link rel="stylesheet" type="text/css" href="{{asset "css/main.css"}}" />
     <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Droid+Serif:400,700" />
 
@@ -39,6 +42,9 @@
 
     {{!-- JavaScript --}}
     <script type="text/javascript" src="{{asset "js/jquery.js"}}"></script>
+    {{#if post}}
+        <script type="text/javascript" src="{{asset "js/prism.js"}}"></script>
+    {{/if}}
     <script type="text/javascript" src="{{asset "js/TweenMax.js"}}"></script>
     <script type="text/javascript" src="{{asset "js/TimelineMax.js"}}"></script>
 
