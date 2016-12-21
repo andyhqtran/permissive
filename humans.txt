@@ -1,0 +1,14 @@
+/* TEAM */
+Your title: Andy Tran
+Site: hello@andytran.me
+Twitter: helloandytran
+Location: San Jose, United States of America
+
+/* THANKS */
+Name: Justin Kwak (http://justinkwak.com/) - User Experience
+
+/* SITE */
+Last update: YYYY/MM/DD
+Standards: HTML5, CSS3, JavaScript, ES2015
+Components: Gulp, jQuery, Sass, Handlebars, Prism, Ionicons, Normalize.css, GSAP
+Software: Ghost, Node.js, Sublime Text 3, Sketch 3, Terminal, ESLint, Sass Lint
