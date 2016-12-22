@@ -1,0 +1,13 @@
+.button-group {
+  display: inline-flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+
+  &--vertical {
+    flex-direction: column;
+  }
+
+  .button {
+    margin: 0 4px;
+  }
+}
