@@ -1,15 +1,36 @@
 jQuery(document).ready(function() {
   $.get(ghost.url.api('posts', {
-    filter: 'tags:[case-study,project]',
+    filter: 'tags:[case-study,project,case-studies]',
     include: 'tags',
-    limit: 6,
+    limit: 'all',
   })).done(onSuccess);
 });
 
 function onSuccess(data) {
+  var currentPage = parseInt(window.location.hash.substring(1)) || 1;
+
+  var projectsPerPage = 3;
+
   $.each(data.posts, function(i, post) {
     $('.project-grid').append(createProject(post));
   });
+
+  if (data.posts.length > projectsPerPage) {
+    var pagination = $('<div class="pagination" />');
+    var buttonGroup = $('<div class="button-group" />');
+
+    for (var i = 0; Math.ceil(data.posts.length / projectsPerPage) > i; i++) {
+      buttonGroup.append('<button class="button">' + (i + 1) + '</button>')
+    }
+
+    if (Math.ceil(data.posts.length / projectsPerPage) >= 2) {
+      buttonGroup.append('<button class="button"><span class="icon ion-arrow-right-c"></span></button>');
+    }
+
+    pagination.append(buttonGroup);
+
+    $('.page__container').append(pagination);
+  }
 }
 
 function createProject(data) {
