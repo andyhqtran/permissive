@@ -41,4 +41,11 @@ $(document).ready(function() {
   $('#navigation__toggle').on('click', function() {
     $(this).parent().toggleClass('navigation--active');
   });
+
+  /**
+   * Page Loading
+   */
+  $('.loading-bar').animate({ width: '100%' }, 300, function() {
+    $(this).animate({ opacity: '0'}, 300);
+  });
 });
