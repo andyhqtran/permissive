@@ -20,6 +20,11 @@
     margin: 0 0 10px;
     color: $text-secondary;
     font-size: rem(12);
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
   }
 
   &__content {

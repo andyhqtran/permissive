@@ -18,10 +18,10 @@
       display: flex;
       align-items: flex-end;
       flex-wrap: wrap;
-      margin: 0 0 10px;
+      margin: 0 0 5px;
 
       h6 {
-        margin: 0 10px 0 0;
+        margin: 0 10px 5px 0;
         font-size: rem(16);
         font-weight: $font-medium;
         line-height: normal;
@@ -33,6 +33,7 @@
       }
 
       span {
+        margin: 0 0 5px;
         color: $text-secondary;
         font-family: $header-font;
         font-size: rem(12);
