@@ -1,0 +1,28 @@
+.social-share {
+  &__title {
+    margin: 0 0 10px;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    color: $text-body;
+    font-size: rem(18);
+    line-height: 1;
+
+    a {
+      display: block;
+      margin: 0 10px;
+      color: inherit;
+
+      &:first-child {
+        margin-left: 0;
+      }
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+}
