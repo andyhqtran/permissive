@@ -1,3 +1,13 @@
+.loading {
+  background: transparent;
+  width: 16px;
+  height: 16px;
+  border: 3px solid $accent;
+  border-top: 3px solid transparent;
+  border-radius: 100%;
+  animation: spin 0.6s infinite;
+}
+
 .loading-bar {
   z-index: 1;
   position: fixed;
@@ -5,5 +15,11 @@
   left: 0;
   background: $accent;
   width: 0%;
-  height: 4px;
+  height: 3px;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(1turn);
+  }
 }
