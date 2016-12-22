@@ -16,6 +16,7 @@
   background: $accent;
   width: 0%;
   height: 3px;
+  pointer-events: none;
 }
 
 @keyframes spin {
