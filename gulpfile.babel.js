@@ -12,8 +12,9 @@ gulp.task('babel', () => gulp.src('./src/babel/**/*.js')
   .pipe(babel({
     presets: ['es2015'],
   }))
+  .pipe(sourcemaps.write())
   .pipe(gulp.dest('./assets/js'))
-  .ipe(refresh()));
+  .pipe(refresh()));
 
 gulp.task('babel:watch', () => {
   refresh.listen();
