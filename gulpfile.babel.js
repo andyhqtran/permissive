@@ -38,6 +38,6 @@ gulp.task('sass:watch', () => {
 gulp.task('watch', () => {
   refresh.listen();
 
-  gulp.watch('./babel/**/*.js', ['babel']);
-  gulp.watch('./sass/**/*.scss', ['sass']);
+  gulp.watch('./src/sass/**/*.scss', ['sass']);
+  gulp.watch('./src/babel/**/*.js', ['babel']);
 });
