@@ -1,3 +1,19 @@
 {{!< default}}
 
-Contact
+{{#post}}
+  <main
+    class="content"
+    id="content"
+    role="main"
+    {{#if @blog.cover}}
+      style="background: url({{@blog.cover}}) right bottom no-repeat fixed; background-size: cover;"
+    {{/if}}
+  >
+    <div class="post">
+      <article class="article" id="{{id}}-{{slug}}">
+        <section class="article__content">
+          {{content}}
+        </section>
+      </article>
+  </main>
+{{/post}}

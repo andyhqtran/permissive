@@ -10,6 +10,7 @@
     font-family: $header-font;
     font-size: rem(12);
     font-weight: $font-medium;
+    line-height: normal;
     text-transform: uppercase;
   }
 
@@ -18,7 +19,6 @@
     align-items: flex-end;
     flex-direction: row;
     width: 100%;
-    margin: 0 0 20px;
 
     &:last-of-type,
     &:last-child {
@@ -40,5 +40,9 @@
         margin-right: 0;
       }
     }
+  }
+
+  * {
+    margin: 0 0 20px;
   }
 }
