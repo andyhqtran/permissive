@@ -3,6 +3,10 @@
   flex-direction: column;
   flex-wrap: nowrap;
 
+  * {
+    margin: 0 0 20px;
+  }
+
   &__label {
     width: 100%;
     margin: 0 0 10px;
@@ -20,9 +24,8 @@
     flex-direction: row;
     width: 100%;
 
-    &:last-of-type,
     &:last-child {
-      margin: 0;
+      margin-bottom: 0;
     }
 
     * {
@@ -40,9 +43,5 @@
         margin-right: 0;
       }
     }
-  }
-
-  * {
-    margin: 0 0 20px;
   }
 }
