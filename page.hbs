@@ -1,3 +1,26 @@
 {{!< default}}
+{{!-- The tag above means - insert everything in this file into the {body} of the default.hbs template --}}
 
-Default Page
+{{!-- Post Content --}}
+{{#post}}
+  <main
+    class="content"
+    id="content"
+    role="main"
+    {{#if @blog.cover}}
+      style="background: url({{@blog.cover}}) right bottom no-repeat fixed; background-size: cover;"
+    {{/if}}
+  >
+    <div class="post">
+      <article class="article" id="{{id}}-{{slug}}">
+        <header class="article__header">
+          <h1 class="article__title">{{title}}</h1>
+        </header>
+
+        <section class="article__content">
+          {{content}}
+        </section>
+      </article>
+    </div>
+  </main>
+{{/post}}
