@@ -21,6 +21,8 @@
       margin: 0 auto 10px;
 
       &__group {
+        margin: 0;
+
         @media (max-width: 600px) {
           flex-direction: column;
           width: 100%;
