@@ -1,7 +1,7 @@
 .article {
   max-width: 900px;
   margin: 0 auto;
-  padding: 0 120px;
+  padding: 0 100px;
   box-sizing: border-box;
   font-size: rem(16);
   line-height: rem(32);
@@ -11,6 +11,7 @@
   }
 
   &__date {
+    display: inline-block;
     color: $text-secondary;
     font-family: $header-font;
     font-size: rem(12);
@@ -18,11 +19,29 @@
     text-transform: uppercase;
   }
 
+  &__tags {
+    display: inline-block;
+    color: $text-secondary;
+    font-family: $header-font;
+    font-size: rem(12);
+    font-weight: $font-medium;
+
+    a {
+      color: $accent;
+      text-decoration: none;
+    }
+  }
+
   &__title {
     color: $text-primary;
     font-size: rem(40);
     font-weight: $font-bold;
     line-height: rem(48);
+
+    &,
+    a {
+      text-decoration: none;
+    }
   }
 
   &__sub-title {

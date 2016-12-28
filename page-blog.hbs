@@ -1,3 +1,70 @@
 {{!< default}}
 
-Blog
+<main
+  class="content"
+  id="content"
+  role="main"
+  {{#if @blog.cover}}
+    style="background: url({{@blog.cover}}) center no-repeat fixed; background-size: cover;"
+  {{/if}}
+>
+  <div class="page__container">
+    <header class="page__header">
+      <h1 class="page__title">Blog</h1>
+      <p class="page__description">Stay up to date with the latest and greatest articles!</p>
+    </header>
+
+    <div class="blog-grid">
+      <article class="article">
+        <header class="article__header">
+          <time class="article__date" datetime="{{date format="YYYY-MM-DD"}}">{{date format="MMMM, DD YYYY"}}</time>
+          <span style="margin: 0 5px; vertical-align: middle;"> &middot; </span>
+          <div class="article__tags"><a href="#">Tutorial</a>, <a href="#">WordPress</a>, <a href="#">Development</a></div>
+          <h2 class="article__title"><a href="#">Lorem Ipsum Dolor Sit Amet Consectetur</a></h2>
+        </header>
+        <section class="article__content">
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. An eum discere ea mavis, quae cum plane perdidiceriti nihil sciat? Qui autem de summo bono dissentit de tota philosophiae ratione dissentit. Quae similitudo in genere etiam humano apparet. Consequentia exquirere, quoad sit id, quod volumus, effectum. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          <div class="button-group">
+            <button class="button button--primary">View Post</button>
+            <button class="button"><span class="ion ion-android-bookmark"></span></button>
+          </div>
+        </section>
+      </article>
+
+      <article class="article">
+        <header class="article__header">
+          <time class="article__date" datetime="{{date format="YYYY-MM-DD"}}">{{date format="MMMM, DD YYYY"}}</time>
+          <span style="margin: 0 5px; vertical-align: middle;"> &middot; </span>
+          <div class="article__tags"><a href="#">Case Study</a>, <a href="#">WordPress</a>, <a href="#">Development</a></div>
+          <h2 class="article__title"><a href="#">Quae Similitudo in Genere Etiam Humano</a></h2>
+        </header>
+        <section class="article__thumbnail">
+          <img alt="Placeholder" src="//placehold.it/800x300/0080FF/FFFFFF" />
+        </section>
+        <section class="article__content">
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. An eum discere ea mavis, quae cum plane perdidiceriti nihil sciat? Qui autem de summo bono dissentit de tota philosophiae ratione dissentit. Quae similitudo in genere etiam humano apparet. Consequentia exquirere, quoad sit id, quod volumus, effectum. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          <div class="button-group">
+            <button class="button button--primary">View Post</button>
+            <button class="button"><span class="ion ion-android-bookmark"></span></button>
+          </div>
+        </section>
+      </article>
+
+      <article class="article">
+        <header class="article__header">
+          <time class="article__date" datetime="{{date format="YYYY-MM-DD"}}">{{date format="MMMM, DD YYYY"}}</time>
+          <span style="margin: 0 5px; vertical-align: middle;"> &middot; </span>
+          <div class="article__tags"><a href="#">Case Study</a>, <a href="#">WordPress</a>, <a href="#">Development</a></div>
+          <h2 class="article__title"><a href="#">Quae Similitudo in Genere Etiam Humano</a></h2>
+        </header>
+        <section class="article__content">
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. An eum discere ea mavis, quae cum plane perdidiceriti nihil sciat? Qui autem de summo bono dissentit de tota philosophiae ratione dissentit. Quae similitudo in genere etiam humano apparet. Consequentia exquirere, quoad sit id, quod volumus, effectum. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          <div class="button-group">
+            <button class="button button--primary">View Post</button>
+            <button class="button"><span class="ion ion-android-bookmark"></span></button>
+          </div>
+        </section>
+      </article>
+    </div>
+  </div>
+</main>

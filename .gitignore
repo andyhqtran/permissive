@@ -4,5 +4,6 @@ npm-debug.log
 
 assets/css/main.css
 assets/js/index.js
+assets/js/blog.js
 assets/js/projects.js
 assets/js/main.js

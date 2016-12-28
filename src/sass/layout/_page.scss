@@ -13,12 +13,26 @@
     }
   }
 
-  &__title {
+  &__header {
     max-width: 700px;
     margin: 0 auto 40px;
+  }
+
+  &__title {
     color: $text-primary;
     font-size: rem(40);
     font-weight: $font-bold;
     line-height: rem(48);
+  }
+
+  &__description {
+    color: $text-secondary;
+    font-size: rem(18);
+  }
+
+  .pagination {
+    max-width: 100%;
+    margin: 0 auto;
+    text-align: center;
   }
 }
