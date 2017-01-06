@@ -8,12 +8,21 @@
   &__header {
     display: flex;
     flex-direction: column;
-    padding: 20px;
+    margin: 0 0 20px;
+    padding: 20px 20px 0;
+  }
+
+  &__thumbnail {
+    margin: 0 0 20px;
   }
 
   &__title {
     order: 2;
     margin: 0;
+
+    a {
+      text-decoration: none;
+    }
   }
 
   &__sub-title {
@@ -29,6 +38,6 @@
   }
 
   &__content {
-    padding: 20px;
+    padding: 0 20px 20px;
   }
 }

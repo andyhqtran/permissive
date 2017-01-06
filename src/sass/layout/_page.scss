@@ -1,8 +1,10 @@
 .page {
   &__container {
+    position: relative;
     background: rgba($white, 0.98);
     width: calc(100% - 88px);
     height: 100%;
+    border-left: 1px solid $border-color;
     margin: 0 0 0 auto;
     padding: 120px 60px 40px;
     box-sizing: border-box;
