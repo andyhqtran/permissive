@@ -15,16 +15,15 @@
     margin: 0 0 20px;
 
     header {
-      display: flex;
-      align-items: flex-end;
-      flex-wrap: wrap;
       margin: 0 0 5px;
+      line-height: normal;
 
       h6 {
-        margin: 0 10px 5px 0;
+        display: inline-block;
+        margin: 0 10px 0 0;
         font-size: rem(16);
         font-weight: $font-medium;
-        line-height: normal;
+        line-height: rem(24);
 
         a {
           color: inherit;
@@ -33,12 +32,13 @@
       }
 
       span {
-        margin: 0 0 5px;
+        display: inline-block;
         color: $text-secondary;
         font-family: $header-font;
         font-size: rem(12);
         font-weight: $font-medium;
         line-height: normal;
+        white-space: nowrap;
       }
     }
   }
