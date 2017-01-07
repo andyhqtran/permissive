@@ -8,6 +8,7 @@
   flex-direction: row;
   padding: 0 20px 0 0;
   transform: translateX(100%);
+  text-decoration: none;
   transition: 0.2s ease;
 
   &:before {
@@ -40,7 +41,6 @@
     padding: 4px;
     box-sizing: border-box;
     transform: translateY(-50%);
-    text-decoration: none;
     overflow: hidden;
     cursor: pointer;
 
