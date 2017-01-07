@@ -141,13 +141,13 @@ function onSuccess(data) {
 jQuery(document).ready(() => {
   /**
    * [if ghost api url is enabled and page variable declared]
-   * @return {[boolean]}             [return false if ghost api url is not enabled or page variable not declared]
+   * @return {[boolean]} [false if ghost api url is not enabled or page variable not declared]
    */
   if (!ghost.url.api || !window.page) {
     return false;
   }
 
-  $.get(ghost.url.api('posts', {
+  return $.get(ghost.url.api('posts', {
     include: 'tags,author',
     filter: window.page.filter || console.warn('Filter must be provided'),
     limit: 'all',
