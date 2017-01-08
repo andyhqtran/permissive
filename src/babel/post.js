@@ -121,28 +121,34 @@ function onSuccess(data) {
       $('.project-grid').append(createPost(post, 'project'));
     }
   });
-
-  // if (data.posts.length > postsPerPage) {
-  //   const pagination = $('<div class="pagination" />');
-
-  //   const buttonGroup = $('<div class="button-group" />');
-
-  //   for (let i = 0; Math.ceil(data.posts.length / postsPerPage) > i; i += 1) {
-  //     buttonGroup.append(`<button class="button">${(i + 1)}</button>`);
-  //   }
-
-  //   if (Math.ceil(data.posts.length / postsPerPage) >= 2) {
-  //     buttonGroup.append('<button class="button"><span class="icon ion-arrow-right-c"></span></button>');
-  //   }
-
-  //   pagination.append(buttonGroup);
-
-  //   $('.page__container').append(pagination);
-  // }
 }
 
 function postRequest(options) {
   return $.get(ghost.url.api('posts', options));
+}
+
+function checkCurrentPage(currentPage, postsPerPage) {
+  return postRequest({
+    filter: window.page.filter || console.warn('Filter must be provided'),
+    page: currentPage,
+    limit: postsPerPage,
+  }).done((data) => {
+    if (data.posts.length < 1) {
+      $('#pagination-right').attr('disabled', true).addClass('button--disabled');
+    }
+  });
+}
+
+function checkNextPage(currentPage, postsPerPage) {
+  return postRequest({
+    filter: window.page.filter || console.warn('Filter must be provided'),
+    page: currentPage + 1,
+    limit: postsPerPage,
+  }).done((data) => {
+    if (data.posts.length < 1) {
+      $('#pagination-right').attr('disabled', true).addClass('button--disabled');
+    }
+  });
 }
 
 jQuery(document).ready(() => {
@@ -158,7 +164,7 @@ jQuery(document).ready(() => {
 
   const postsPerPage = window.page.postsPerPage || 1;
 
-  let options = {
+  const options = {
     include: 'tags,author',
     filter: window.page.filter || console.warn('Filter must be provided'),
     page: currentPage,
@@ -179,33 +185,17 @@ jQuery(document).ready(() => {
     $('#pagination-left').attr('disabled', true).addClass('button--disabled');
   }
 
-  postRequest({
-    filter: window.page.filter || console.warn('Filter must be provided'),
-    page: currentPage,
-    limit: postsPerPage,
-  }).done((data) => {
-    if (data.posts.length < 1) {
-      $('#pagination-right').attr('disabled', true).addClass('button--disabled');
-    }
-  });
+  checkCurrentPage(currentPage, postsPerPage);
 
-  postRequest({
-    filter: window.page.filter || console.warn('Filter must be provided'),
-    page: currentPage + 1,
-    limit: postsPerPage,
-  }).done((data) => {
-    if (data.posts.length < 1) {
-      $('#pagination-right').attr('disabled', true).addClass('button--disabled');
-    }
-  });
+  checkNextPage(currentPage, postsPerPage);
 
-  $('#pagination-left').on('click', function(event) {
+  $('#pagination-left').on('click', () => {
     if (currentPage === 1) {
       return false;
     }
 
-    currentPage--;
-    options.page--;
+    currentPage -= 1;
+    options.page -= 1;
 
     if (currentPage === 1) {
       $('#pagination-left').attr('disabled', true).addClass('button--disabled');
@@ -215,36 +205,20 @@ jQuery(document).ready(() => {
 
     window.location.hash = `#${currentPage}`;
 
-    postRequest({
-      filter: window.page.filter || console.warn('Filter must be provided'),
-      page: currentPage + 1,
-      limit: postsPerPage,
-    }).done((data) => {
-      if (data.posts.length < 1) {
-        $('#pagination-right').attr('disabled', true).addClass('button--disabled');
-      }
-    });
+    checkNextPage(currentPage, postsPerPage);
 
     return postRequest(options).done(onSuccess);
   });
 
-  $('#pagination-right').on('click', function() {
-    currentPage++;
-    options.page++;
+  $('#pagination-right').on('click', () => {
+    currentPage += 1;
+    options.page += 1;
 
     $('#pagination-left').attr('disabled', false).removeClass('button--disabled');
 
     window.location.hash = `#${currentPage}`;
 
-    postRequest({
-      filter: window.page.filter || console.warn('Filter must be provided'),
-      page: currentPage + 1,
-      limit: postsPerPage,
-    }).done((data) => {
-      if (data.posts.length < 1) {
-        $('#pagination-right').attr('disabled', true).addClass('button--disabled');
-      }
-    });
+    checkNextPage(currentPage, postsPerPage);
 
     return postRequest(options).done(onSuccess);
   });
