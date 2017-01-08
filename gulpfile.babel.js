@@ -12,6 +12,14 @@ gulp.task('babel', () => gulp.src('./src/babel/**/*.js')
   .pipe(babel({
     presets: ['es2015'],
   }))
+  .on('error', function (err) {
+    console.log('[Compilation Error]');
+    console.log(err.fileName + (err.loc ? `( ${err.loc.line}, ${err.loc.column} ): ` : ': '));
+    console.log(`error Babel:${err.message}\n`);
+    console.log(err.codeFrame);
+
+    this.emit('end');
+  })
   .pipe(sourcemaps.write())
   .pipe(gulp.dest('./assets/js'))
   .pipe(refresh()));
