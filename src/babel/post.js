@@ -22,9 +22,9 @@ function createPost(data, type) {
 
     for (let i = 0; i < data.tags.length; i += 1) {
       if (i === 0) {
-        postTags.append(`<a href="/tag/${data.tags[i].name}">${data.tags[i].name.toUpperCase()}</a>`);
+        postTags.append(`<a href="/tag/${data.tags[i].name}">${data.tags[i].name}</a>`);
       } else {
-        postTags.append(`<a href="/tag/${data.tags[i].name}">, ${data.tags[i].name.toUpperCase()}</a>`);
+        postTags.append(`<a href="/tag/${data.tags[i].name}">, ${data.tags[i].name}</a>`);
       }
     }
 
@@ -37,10 +37,13 @@ function createPost(data, type) {
     const postContent = $('<section class="article__content" />');
 
     if (data.markdown.length > 500) {
-      postContent.append(`<p>${data.html.substr(0, 500).replace(/\s+$/, '')}...</p>`);
+      postContent.html(`${data.html.substr(0, 500).replace(/\s+$/, '')}...`);
     } else {
-      postContent.append(`<p>${data.html}</p>`);
+      postContent.html(data.html.replace(/\s+$/, ''));
     }
+
+    postContent.children().contents(':not(p):not(b):not(i):not(u):not(a):not(strong):not(em), .button, .input').remove();
+    postContent.contents('div, blockquote, pre, code, hr, br').remove();
 
     post.append(postContent);
 
@@ -130,6 +133,7 @@ function postRequest(options) {
 function checkCurrentPage(currentPage, postsPerPage) {
   return postRequest({
     filter: window.page.filter || console.warn('Filter must be provided'),
+    order: window.page.order || console.warn('Order must be provided'),
     page: currentPage,
     limit: postsPerPage,
   }).done((data) => {
@@ -142,6 +146,7 @@ function checkCurrentPage(currentPage, postsPerPage) {
 function checkNextPage(currentPage, postsPerPage) {
   return postRequest({
     filter: window.page.filter || console.warn('Filter must be provided'),
+    order: window.page.order || console.warn('Order must be provided'),
     page: currentPage + 1,
     limit: postsPerPage,
   }).done((data) => {
@@ -162,11 +167,12 @@ jQuery(document).ready(() => {
 
   let currentPage = parseInt(window.location.hash.substring(1), 10) || 1;
 
-  const postsPerPage = window.page.postsPerPage || 1;
+  const postsPerPage = window.page.limit || 1;
 
   const options = {
     include: 'tags,author',
     filter: window.page.filter || console.warn('Filter must be provided'),
+    order: window.page.order || console.warn('Order must be provided'),
     page: currentPage,
     limit: postsPerPage,
   };
