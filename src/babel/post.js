@@ -104,8 +104,13 @@ function createPost(data, type) {
  * @return {[null]}        [null]
  */
 function onSuccess(data) {
-  // const currentPage = parseInt(window.location.hash.substring(1), 10) || 1;
-  const projectsPerPage = 3;
+  if (window.page.type === 'post') {
+    $('.blog-grid').empty();
+  }
+
+  if (window.page.type === 'project') {
+    $('.project-grid').empty();
+  }
 
   $.each(data.posts, (i, post) => {
     if (window.page.type === 'post') {
@@ -117,25 +122,27 @@ function onSuccess(data) {
     }
   });
 
-  if (data.posts.length > projectsPerPage) {
-    const pagination = $('<div class="pagination" />');
+  // if (data.posts.length > postsPerPage) {
+  //   const pagination = $('<div class="pagination" />');
 
-    const buttonGroup = $('<div class="button-group" />');
+  //   const buttonGroup = $('<div class="button-group" />');
 
-    for (let i = 0; Math.ceil(data.posts.length / projectsPerPage) > i; i += 1) {
-      buttonGroup.append(`<button class="button">${(i + 1)}</button>`);
-    }
+  //   for (let i = 0; Math.ceil(data.posts.length / postsPerPage) > i; i += 1) {
+  //     buttonGroup.append(`<button class="button">${(i + 1)}</button>`);
+  //   }
 
-    if (Math.ceil(data.posts.length / projectsPerPage) >= 2) {
-      buttonGroup.append('<button class="button"><span class="icon ion-arrow-right-c"></span></button>');
-    }
+  //   if (Math.ceil(data.posts.length / postsPerPage) >= 2) {
+  //     buttonGroup.append('<button class="button"><span class="icon ion-arrow-right-c"></span></button>');
+  //   }
 
-    pagination.append(buttonGroup);
+  //   pagination.append(buttonGroup);
 
-    $('.page__container').append(pagination);
-  }
+  //   $('.page__container').append(pagination);
+  // }
+}
 
-  $('.loading').remove();
+function postRequest(options) {
+  return $.get(ghost.url.api('posts', options));
 }
 
 jQuery(document).ready(() => {
@@ -147,9 +154,100 @@ jQuery(document).ready(() => {
     return false;
   }
 
-  return $.get(ghost.url.api('posts', {
+  let currentPage = parseInt(window.location.hash.substring(1), 10) || 1;
+
+  const postsPerPage = window.page.postsPerPage || 1;
+
+  let options = {
     include: 'tags,author',
     filter: window.page.filter || console.warn('Filter must be provided'),
-    limit: 'all',
-  })).done(onSuccess);
+    page: currentPage,
+    limit: postsPerPage,
+  };
+
+  const pagination = $('<div class="pagination" />');
+
+  const buttonGroup = $('<div class="button-group" />');
+  buttonGroup.append('<button class="button" id="pagination-left"><span class="icon ion-arrow-left-c"></span></button>');
+  buttonGroup.append('<button class="button" id="pagination-right"><span class="icon ion-arrow-right-c"></span></button>');
+
+  pagination.append(buttonGroup);
+
+  $('.page__container').append(pagination);
+
+  if (currentPage === 1) {
+    $('#pagination-left').attr('disabled', true).addClass('button--disabled');
+  }
+
+  postRequest({
+    filter: window.page.filter || console.warn('Filter must be provided'),
+    page: currentPage,
+    limit: postsPerPage,
+  }).done((data) => {
+    if (data.posts.length < 1) {
+      $('#pagination-right').attr('disabled', true).addClass('button--disabled');
+    }
+  });
+
+  postRequest({
+    filter: window.page.filter || console.warn('Filter must be provided'),
+    page: currentPage + 1,
+    limit: postsPerPage,
+  }).done((data) => {
+    if (data.posts.length < 1) {
+      $('#pagination-right').attr('disabled', true).addClass('button--disabled');
+    }
+  });
+
+  $('#pagination-left').on('click', function(event) {
+    if (currentPage === 1) {
+      return false;
+    }
+
+    currentPage--;
+    options.page--;
+
+    if (currentPage === 1) {
+      $('#pagination-left').attr('disabled', true).addClass('button--disabled');
+    }
+
+    $('#pagination-right').attr('disabled', false).removeClass('button--disabled');
+
+    window.location.hash = `#${currentPage}`;
+
+    postRequest({
+      filter: window.page.filter || console.warn('Filter must be provided'),
+      page: currentPage + 1,
+      limit: postsPerPage,
+    }).done((data) => {
+      if (data.posts.length < 1) {
+        $('#pagination-right').attr('disabled', true).addClass('button--disabled');
+      }
+    });
+
+    return postRequest(options).done(onSuccess);
+  });
+
+  $('#pagination-right').on('click', function() {
+    currentPage++;
+    options.page++;
+
+    $('#pagination-left').attr('disabled', false).removeClass('button--disabled');
+
+    window.location.hash = `#${currentPage}`;
+
+    postRequest({
+      filter: window.page.filter || console.warn('Filter must be provided'),
+      page: currentPage + 1,
+      limit: postsPerPage,
+    }).done((data) => {
+      if (data.posts.length < 1) {
+        $('#pagination-right').attr('disabled', true).addClass('button--disabled');
+      }
+    });
+
+    return postRequest(options).done(onSuccess);
+  });
+
+  return postRequest(options).done(onSuccess);
 });
