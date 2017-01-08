@@ -9,7 +9,6 @@
   padding: 0 20px 0 0;
   transform: translateX(100%);
   transition: 0.2s ease;
-  text-decoration: none;
 
   &:before {
     content: '';
@@ -60,11 +59,15 @@
 
   &__meta {
     color: $text-secondary;
-    font-size: rem(12);
+    font-size: rem(10);
   }
 
   &__title {
     margin: 0;
-    font-size: rem(14);
+    font-size: rem(12);
+
+    a {
+      text-decoration: none;
+    }
   }
 }
