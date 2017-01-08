@@ -162,6 +162,7 @@ jQuery(document).ready(() => {
    * @return {[boolean]} [false if ghost api url is not enabled or page variable not declared]
    */
   if (!ghost.url.api || !window.page) {
+    console.log('nope');
     return false;
   }
 

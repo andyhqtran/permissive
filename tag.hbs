@@ -1,0 +1,45 @@
+{{!< default}}
+
+<main
+  class="content"
+  id="content"
+  role="main"
+  {{#if @blog.cover}}
+    style="background: url({{@blog.cover}}) center no-repeat fixed; background-size: cover;"
+  {{/if}}
+>
+  <div class="page__container">
+    <header class="page__header">
+      {{#tag}}
+        <h1 class="page__title">{{name}}</h1>
+        {{#if description}}
+          <p class="page__description">{{description}}</p>
+        {{/if}}
+      {{/tag}}
+    </header>
+
+    <div class="blog-grid">
+      {{#foreach posts}}
+        <article class="article">
+          <header class="article__header">
+            <time class="article__date" datetime="{{date published_at format="MMMM DD, YYYY"}}">{{date published_at format="MMMM DD, YYYY"}}</time>
+            <span style="margin: 0 5px; vertical-align: middle;"> · </span>
+            <div class="article__tags">{{tags separator=", "}}</div>
+            <h2 class="article__title">
+              <a href="{{url}}">{{title}}</a>
+            </h2>
+          </header>
+          <section class="article__content">{{excerpt characters="500"}}</section>
+          <footer class="article__footer">
+            <div class="button-group">
+              <a class="button button--primary" href="{{url}}">View Post</a>
+              <button class="button"><span class="ion ion-android-bookmark"></span></button>
+            </div>
+          </footer>
+        </article>
+        {{/foreach}}
+    </div>
+
+    {{pagination}}
+  </div>
+</main>
