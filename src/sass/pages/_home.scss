@@ -52,21 +52,23 @@
   }
 
   .site-footer {
-    display: flex;
-    color: $text-secondary;
-    font-size: rem(10);
-
-    a {
-      color: $text-secondary;
-      font-family: $header-font;
-      font-weight: $font-semibold;
-      text-decoration: none;
-    }
+    position: relative;
+    bottom: auto;
+    left: auto;
 
     &__poweredby {
-      margin-right: 10px;
+      display: block;
     }
-  }
+
+    @media (max-width: 1024px) {
+      position: relative;
+      display: block;
+      max-width: auto;
+      margin: 0;
+      padding: 0;
+      text-align: left;
+    }
+}
 
   .nav--social {
     margin: 20px 0;

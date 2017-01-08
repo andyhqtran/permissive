@@ -1,0 +1,37 @@
+.site-footer {
+  position: fixed;
+  bottom: 20px;
+  left: 120px;
+  display: flex;
+  color: $text-secondary;
+  font-size: rem(10);
+
+  a {
+    color: $text-secondary;
+    font-family: $header-font;
+    font-weight: $font-semibold;
+    text-decoration: none;
+  }
+
+  &__poweredby {
+    display: none;
+    margin-right: 10px;
+  }
+
+
+  @media (max-width: 1024px) {
+    position: relative;
+    bottom: auto;
+    left: auto;
+    display: flex;
+    flex-direction: column;
+    max-width: 900px;
+    margin: 0 auto 20px;
+    padding: 0 100px;
+    text-align: center;
+
+    &__poweredby {
+      display: block;
+    }
+  }
+}

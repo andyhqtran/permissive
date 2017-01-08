@@ -1,8 +1,9 @@
 .post {
+  position: relative;
   background: rgba($white, 0.98);
   width: calc(100% - 88px);
   height: 100%;
-  border-left: 1px solid $border-color;
+  box-shadow: inset 1px 0 0 $border-color;
   margin: 0 0 0 auto;
   padding: 120px 0 40px;
   box-sizing: border-box;
