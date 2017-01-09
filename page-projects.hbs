@@ -15,6 +15,25 @@
 
     <div class="project-grid">
       {{#if @labs.publicAPI}}
+        {{#get "posts" filter="tags:[case-study,case-studies,project,projects]" include="tags" limit="9" order="published_at desc" }}
+          {{#foreach posts}}
+            <div class="project">
+              <header class="project__header">
+                <h5 class="project__title">
+                  <a href="{{url}}">{{title}}</a>
+                </h5>
+                <h6 class="project__sub-title">
+                  {{tags separator=", "}}
+                </h6>
+              </header>
+              <div class="project__content">
+                <p class="project__excerpt">{{excerpt characters="125"}}</p>
+                <a class="button" href="{{url}}"><span>Read More</span> <span class="icon ion-arrow-right-c" style="font-size: 0.625rem;"></span></a>
+              </div>
+            </div>
+          {{/foreach}}
+        {{/get}}
+
         {{!-- <div class="loading"></div> --}}
       {{else}}
         <p>You need to enable the <a href="{{@blog.url}}/ghost/settings/labs/">Public API</a> feature in your dashboard to use this feature.</p>
@@ -31,5 +50,6 @@
     type: 'project',
     filter: 'tags:[case-study,case-studies,project,projects]',
     limit: 9,
+    order: "published_at desc",
   };
 </script>
