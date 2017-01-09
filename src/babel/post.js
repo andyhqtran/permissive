@@ -126,34 +126,18 @@ function onSuccess(data) {
   });
 }
 
+function paginationRequest() {
+  return $.get(ghost.url.api('posts', {
+    include: 'pagination',
+    filter: window.page.filter,
+    order: window.page.order,
+    page: window.currentPage,
+    limit: window.postsPerPage,
+  }));
+}
+
 function postRequest(options) {
   return $.get(ghost.url.api('posts', options));
-}
-
-function checkCurrentPage(currentPage, postsPerPage) {
-  return postRequest({
-    filter: window.page.filter || console.warn('Filter must be provided'),
-    order: window.page.order || console.warn('Order must be provided'),
-    page: currentPage,
-    limit: postsPerPage,
-  }).done((data) => {
-    if (data.posts.length < 1) {
-      $('#pagination-right').attr('disabled', true).addClass('button--disabled');
-    }
-  });
-}
-
-function checkNextPage(currentPage, postsPerPage) {
-  return postRequest({
-    filter: window.page.filter || console.warn('Filter must be provided'),
-    order: window.page.order || console.warn('Order must be provided'),
-    page: currentPage + 1,
-    limit: postsPerPage,
-  }).done((data) => {
-    if (data.posts.length < 1) {
-      $('#pagination-right').attr('disabled', true).addClass('button--disabled');
-    }
-  });
 }
 
 jQuery(document).ready(() => {
@@ -166,69 +150,84 @@ jQuery(document).ready(() => {
     return false;
   }
 
-  let currentPage = parseInt(window.location.hash.substring(1), 10) || 1;
+  window.currentPage = parseInt(window.location.hash.substring(1), 10) || 1;
 
-  const postsPerPage = window.page.limit || 1;
+  window.postsPerPage = window.page.limit || 1;
 
-  const options = {
+  window.postOptions = {
     include: 'tags,author',
-    filter: window.page.filter || console.warn('Filter must be provided'),
-    order: window.page.order || console.warn('Order must be provided'),
-    page: currentPage,
-    limit: postsPerPage,
+    filter: window.page.filter,
+    order: window.page.order,
+    page: window.currentPage,
+    limit: window.postsPerPage,
   };
 
-  const pagination = $('<div class="pagination" />');
+  paginationRequest().done((data) => {
 
-  const buttonGroup = $('<div class="button-group" />');
-  buttonGroup.append('<button class="button" id="pagination-left"><span class="icon ion-arrow-left-c"></span></button>');
-  buttonGroup.append('<button class="button" id="pagination-right"><span class="icon ion-arrow-right-c"></span></button>');
+    const pagination = $('<div class="pagination" />');
 
-  pagination.append(buttonGroup);
+    const buttonGroup = $('<div class="button-group" />');
+    buttonGroup.append('<button class="button" id="pagination-left"><span class="icon ion-arrow-left-c"></span></button>');
+    buttonGroup.append('<button class="button" id="pagination-right"><span class="icon ion-arrow-right-c"></span></button>');
 
-  $('.page__container').append(pagination);
+    pagination.append(buttonGroup);
 
-  if (currentPage === 1) {
-    $('#pagination-left').attr('disabled', true).addClass('button--disabled');
-  }
+    $('.page__container').append(pagination);
 
-  checkCurrentPage(currentPage, postsPerPage);
+    window.totalPages = data.meta.pagination.pages;
 
-  checkNextPage(currentPage, postsPerPage);
+    if (window.currentPage >= window.totalPages) {
+      window.currentPage = window.totalPages;
 
-  $('#pagination-left').on('click', () => {
-    if (currentPage === 1) {
-      return false;
+      window.postOptions.page = window.totalPages;
+
+      window.location.hash = `#${window.currentPage}`;
+
+      $('#pagination-right').attr('disabled', true).addClass('button--disabled').hide();
     }
 
-    currentPage -= 1;
-    options.page -= 1;
-
-    if (currentPage === 1) {
-      $('#pagination-left').attr('disabled', true).addClass('button--disabled');
+    if (window.currentPage === window.totalPages) {
+      $('#pagination-right').attr('disabled', true).addClass('button--disabled').hide();
     }
 
-    $('#pagination-right').attr('disabled', false).removeClass('button--disabled');
+    if (window.currentPage === 1) {
+      $('#pagination-left').attr('disabled', true).addClass('button--disabled').hide();
+    }
 
-    window.location.hash = `#${currentPage}`;
+    $('#pagination-left').on('click', () => {
+      if (window.currentPage === 1) {
+        return false;
+      }
 
-    checkNextPage(currentPage, postsPerPage);
+      window.currentPage -= 1;
+      window.postOptions.page -= 1;
 
-    return postRequest(options).done(onSuccess);
+      if (window.currentPage === 1) {
+        $('#pagination-left').attr('disabled', true).addClass('button--disabled').hide();
+      }
+
+      $('#pagination-right').attr('disabled', false).removeClass('button--disabled').show();
+
+      window.location.hash = `#${window.currentPage}`;
+
+      return postRequest(window.postOptions).done(onSuccess);
+    });
+
+    $('#pagination-right').on('click', () => {
+      window.currentPage += 1;
+      window.postOptions.page += 1;
+
+      $('#pagination-left').attr('disabled', false).removeClass('button--disabled').show();
+
+      if (window.currentPage >= window.totalPages) {
+        $('#pagination-right').attr('disabled', true).addClass('button--disabled').hide();
+      }
+
+      window.location.hash = `#${window.currentPage}`;
+
+      return postRequest(window.postOptions).done(onSuccess);
+    });
+
+    return postRequest(window.postOptions).done(onSuccess);
   });
-
-  $('#pagination-right').on('click', () => {
-    currentPage += 1;
-    options.page += 1;
-
-    $('#pagination-left').attr('disabled', false).removeClass('button--disabled');
-
-    window.location.hash = `#${currentPage}`;
-
-    checkNextPage(currentPage, postsPerPage);
-
-    return postRequest(options).done(onSuccess);
-  });
-
-  return postRequest(options).done(onSuccess);
 });
