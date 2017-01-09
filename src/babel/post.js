@@ -163,7 +163,6 @@ jQuery(document).ready(() => {
   };
 
   paginationRequest().done((data) => {
-
     const pagination = $('<div class="pagination" />');
 
     const buttonGroup = $('<div class="button-group" />');
@@ -230,4 +229,6 @@ jQuery(document).ready(() => {
 
     return postRequest(window.postOptions).done(onSuccess);
   });
+
+  return postRequest(window.postOptions).done(onSuccess);
 });
