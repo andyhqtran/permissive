@@ -5,7 +5,9 @@ Twitter: helloandytran
 Location: San Jose, United States of America
 
 /* THANKS */
-Name: Justin Kwak (http://justinkwak.com/) - User Experience
+Name: Justin Kwak (http://justinkwak.com/) - User Experience Consulting
+Name: Mario Maruffi (http://understandable.co) - User Experience Consulting
+Name: Mai-Chi Vu (https://www.linkedin.com/in/mai-chi-vu-69ab9525) - Logo Design
 
 /* SITE */
 Last update: YYYY/MM/DD
