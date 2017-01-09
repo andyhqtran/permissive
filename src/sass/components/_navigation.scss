@@ -8,6 +8,14 @@
     margin: 0 0 10px;
   }
 
+  &__toggle {
+    padding: 0 15px;
+
+    img {
+      width: 100%;
+    }
+  }
+
   &__menu {
     display: none;
     align-items: center;

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="240px" height="240px" viewBox="0 0 240 240" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 41.2 (35397) - http://www.bohemiancoding.com/sketch -->
+    <title>Permissive Logo</title>
+    <desc>Permissive Logo (https://andytran.me/permissive) - Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="107.912326%" y1="29.4097222%" x2="35.7096354%" y2="63.6111111%" id="linearGradient-1">
+            <stop stop-color="#005AB3" offset="0%"></stop>
+            <stop stop-color="#0080FF" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="P">
+            <path d="M125,1 C75.2943725,1 35,41.2943725 35,91 C35,140.705627 75.2943725,181 125,181 C174.705627,181 215,140.705627 215,91 L155,91 C155,107.568542 141.568542,121 125,121 C108.431458,121 95,107.568542 95,91 C95,74.4314575 108.431458,61 125,61 C125.002684,60.9999996 125.005368,61 125.008053,61 L178.991947,61 C195.559436,61 209,47.5685425 209,31 C209,14.4278145 195.564937,1 178.991947,1 L125.008053,1 C125.005368,1 125.002684,1.00000035 125,1.00000106 Z" id="Combined-Shape-Copy-10" fill="#0080FF" transform="translate(125.000000, 91.000000) scale(-1, 1) translate(-125.000000, -91.000000) "></path>
+            <path d="M215,91 C215,140.705627 174.705627,181 125,181 C75.2943725,181 35,140.705627 35,91 L95,91 C95,107.568542 108.431458,121 125,121 C141.568542,121 155,107.568542 155,91 L215,91 Z" id="Combined-Shape-Copy-11" fill="url(#linearGradient-1)" transform="translate(125.000000, 136.000000) scale(-1, 1) translate(-125.000000, -136.000000) "></path>
+            <rect id="Rectangle-Copy-17" fill="#0080FF" transform="translate(65.000000, 121.000000) scale(-1, 1) translate(-65.000000, -121.000000) " x="35" y="1" width="60" height="240" rx="30"></rect>
+        </g>
+    </g>
+</svg>
