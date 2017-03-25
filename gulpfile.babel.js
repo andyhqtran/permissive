@@ -8,6 +8,7 @@ import gulp from 'gulp';
 import refresh from 'gulp-refresh';
 import sass from 'gulp-sass';
 import sourcemaps from 'gulp-sourcemaps';
+import uglify from 'gulp-uglify';
 
 gulp.task('babel', () => gulp.src('./src/babel/**/*.js')
   .pipe(sourcemaps.init())
@@ -23,6 +24,7 @@ gulp.task('babel', () => gulp.src('./src/babel/**/*.js')
     this.emit('end');
   })
   .pipe(sourcemaps.write())
+  .pipe(uglify())
   .pipe(gulp.dest('./assets/js'))
   .pipe(refresh()));
 

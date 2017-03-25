@@ -53,7 +53,8 @@
     "gulp-clean-css": "^3.0.4",
     "gulp-refresh": "1.1.0",
     "gulp-sass": "2.3.2",
-    "gulp-sourcemaps": "1.9.1"
+    "gulp-sourcemaps": "1.9.1",
+    "gulp-uglify": "^2.1.2"
   },
   "devDependencies": {
     "concurrently": "3.1.0",
