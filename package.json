@@ -45,7 +45,7 @@
   "contributors": "https://github.com/andyhqtran/Permissive/graphs/contributors",
   "dependencies": {
     "babel-core": "^6.21.0",
-    "babel-preset-es2015": "6.18.0",
+    "babel-preset-es2015": "^6.24.0",
     "babel-register": "^6.24.0",
     "gulp": "3.9.1",
     "gulp-autoprefixer": "^3.1.1",
@@ -54,6 +54,7 @@
     "gulp-refresh": "1.1.0",
     "gulp-sass": "2.3.2",
     "gulp-sourcemaps": "^2.4.1",
+    "gulp-sass": "^3.1.0",
     "gulp-uglify": "^2.1.2"
   },
   "devDependencies": {
