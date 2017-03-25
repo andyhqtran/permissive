@@ -1,7 +1,9 @@
 /**
  * External dependencies
  */
+import autoprefixer from 'gulp-autoprefixer';
 import babel from 'gulp-babel';
+import cleanCSS from 'gulp-clean-css';
 import gulp from 'gulp';
 import refresh from 'gulp-refresh';
 import sass from 'gulp-sass';
@@ -34,6 +36,14 @@ gulp.task('sass', () => gulp.src('./src/sass/**/*.scss')
   .pipe(sourcemaps.init())
   .pipe(sass().on('error', sass.logError))
   .pipe(sourcemaps.write())
+  .pipe(autoprefixer({
+    browsers: [
+      'last 2 versions',
+      '> 5%',
+      'Firefox ESR',
+    ],
+  }))
+  .pipe(cleanCSS())
   .pipe(gulp.dest('./assets/css'))
   .pipe(refresh()));
 
