@@ -52,13 +52,12 @@
     "gulp-babel": "^6.1.2",
     "gulp-clean-css": "^3.0.4",
     "gulp-refresh": "1.1.0",
-    "gulp-sass": "2.3.2",
-    "gulp-sourcemaps": "^2.4.1",
     "gulp-sass": "^3.1.0",
+    "gulp-sourcemaps": "^2.4.1",
     "gulp-uglify": "^2.1.2"
   },
   "devDependencies": {
-    "concurrently": "3.1.0",
+    "concurrently": "^3.4.0",
     "eslint": "3.11.1",
     "eslint-config-airbnb": "13.0.0",
     "eslint-plugin-import": "2.2.0",
