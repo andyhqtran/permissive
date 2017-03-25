@@ -2,7 +2,7 @@
   "name": "permissive",
   "description": "A minimalist theme for Ghost.",
   "demo": "https://demo.andytran.me",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "scripts": {
     "start": "concurrently \"gulp babel\" \"gulp sass\" \"gulp watch\"",
     "lint": "npm run lint-js && npm run lint-sass",
