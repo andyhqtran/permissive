@@ -221,6 +221,7 @@ rules:
         - 'color'
         - 'font'
         - 'font-family'
+        - 'font-feature-settings'
         - 'font-size'
         - 'font-smoothing'
         - 'font-style'

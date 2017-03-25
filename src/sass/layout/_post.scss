@@ -8,6 +8,7 @@
   padding: 120px 0 40px;
   box-sizing: border-box;
   overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
 
   @media (max-width: 768px) {
     width: 100%;

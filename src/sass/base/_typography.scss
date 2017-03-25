@@ -38,20 +38,29 @@ blockquote {
   }
 }
 
+pre {
+  code {
+    display: block;
+    max-height: 400px;
+    overflow: auto;
+  }
+}
 
-code, tt {
+code,
+tt {
   background: #FAFAFA;
   border: 1px solid $border-color;
   border-radius: 2px;
   padding: 2px 4px;
   font-family: Inconsolata, monospace, sans-serif;
-  font-feature-settings: "liga" 0;
+  font-feature-settings: 'liga' 0;
   font-size: 0.85em;
   white-space: pre-wrap;
+  word-wrap: break-word;
 }
 
 hr {
-  background: #EEEEEE;
+  background: $border-color;
   width: 100%;
   height: 1px;
   border: 0;

@@ -1,4 +1,6 @@
 .page {
+  -webkit-overflow-scrolling: touch;
+
   &__container {
     position: relative;
     background: rgba($white, 0.98);

@@ -43,9 +43,11 @@
       padding: 0;
     }
 
-    // &:last-child {
-    //   margin: 0;
-    // }
+    @media (max-width: 768px) {
+      border: 0;
+      border-bottom: 1px solid $border-color;
+      padding: 0 0 80px;
+    }
   }
 
   .pagination {
