@@ -1,9 +1,15 @@
+// Base Colors
 $black: #000000;
 $white: #FFFFFF;
 
-$accent: #0080FF;
-$border-color: #EEEEEE;
+// Theme Colors
+$theme-colors: (
+  primary: #0080FF,
+);
 
-$text-primary: #222222;
-$text-body: #404040;
-$text-secondary: #999999;
+// Text Colors
+$text-colors: (
+  primary: #4C4C4C,
+  body: #666666,
+  secondary: #999999
+);
