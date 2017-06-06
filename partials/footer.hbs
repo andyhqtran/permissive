@@ -1,0 +1,28 @@
+{{!-- Navigation --}}
+<footer class="footer">
+  <div class="footer__main">
+    {{!-- Navigation --}}
+    {{#if @blog.navigation}}
+      {{navigation}}
+    {{/if}}
+  </div>
+
+  <div class="footer__bottom">
+    <div class="container">
+      <div class="footer__copyright">
+        <a href="{{@blog.url}}">{{@blog.title}}</a> &copy; {{date format="YYYY"}}
+      </div>
+
+      <nav class="navigation" role="navigation">
+        <ul class="navigation__menu" role="menu">
+          <li class="navigation__item" role="presentation">
+            <a class="navigation__link" href="{{@blog.url}}privacy-policy">Privacy Policy</a>
+          </li>
+          <li class="navigation__item" role="presentation">
+            <a class="navigation__link" href="{{@blog.url}}terms-of-use">Terms of Use</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+</footer>

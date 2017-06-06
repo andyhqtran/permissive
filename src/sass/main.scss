@@ -9,4 +9,19 @@ html {
   margin: 0;
 }
 
+body {
+  background: #FAFAFA;
+}
+
+.container {
+  width: 100%;
+  max-width: 1140px;
+  padding: 0 80px;
+  box-sizing: border-box;
+}
+
 @import './base/typography';
+
+@import './modules/article';
+@import './modules/navigation';
+@import './modules/footer';

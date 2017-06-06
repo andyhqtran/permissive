@@ -1,5 +1,5 @@
-{{!< default}}
-{{!-- The tag above means - insert everything in this file into the {body} of the default.hbs template --}}
+{{!< layouts/default}}
+{{!-- The tag above means - insert everything in this file into the {body} of the layout/default.hbs template --}}
 
 {{!-- Post Content --}}
 {{#post}}
@@ -7,40 +7,44 @@
     class="content"
     id="content"
     role="main"
-    {{#if @blog.cover}}
-      style="background: url({{@blog.cover}}) right bottom no-repeat fixed; background-size: cover;"
-    {{/if}}
   >
-    <div class="post">
-      <article class="article" id="{{id}}-{{slug}}">
-        <header class="article__header">
-          <time class="article__date" datetime="{{date format="YYYY-MM-DD"}}">{{date format="MMMM, DD YYYY"}}</time>
-          <h1 class="article__title">{{title}}</h1>
-          {{!-- TODO, add sub-title support --}}
-          <h2 class="article__sub-title"></h2>
-        </header>
+    <article
+      class="article {{#if image}}has-thumbnail{{/if}}"
+      id="{{id}}-{{slug}}"
+    >
+      <header
+        class="article__header"
+        style="{{#if image}}background-image: url('{{image}}');{{/if}}"
+      >
+        {{#foreach tags visibility="internal"}}
+          {{#if name}}
+            <div class="article__label">{{name}}</div>
+          {{/if}}
+        {{/foreach}}
 
-        {{#if image}}
-          <section class="article__thumbnail">
-            <img alt="{{title}}" src="{{image}}" />
-          </section>
-        {{/if}}
+        <h1 class="article__title">{{title}}</h1>
 
-        <section class="article__content">
-          {{content}}
-        </section>
+        {{!-- TODO, @ghost needs to add sub-title support --}}
+        {{!-- <h2 class="article__sub-title">{{sub-title}}</h2> --}}
+        <time
+          class="article__date"
+          datetime="{{date format="YYYY-MM-DD"}}"
+        >
+          {{date format="MMMM, DD YYYY"}}
+        </time>
+      </header>
 
-        <footer class="article__footer">
-          {{> author}}
-          {{> social-share}}
-          {{> subscribe}}
-        </footer>
-      </article>
+      <section class="article__content">
+        {{content}}
+      </section>
 
-      {{> site-footer}}
-    </div>
+      {{!--
+      <footer class="article__footer">
+        {{> author}}
+        {{> social-share}}
+        {{> subscribe}}
+      </footer>
+      --}}
+    </article>
   </main>
 {{/post}}
-
-{{!-- Powered By --}}
-{{> powered-by}}

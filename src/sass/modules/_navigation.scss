@@ -1,0 +1,26 @@
+.navigation {
+  font-family: map-get($fonts, header);
+}
+
+.navigation {
+  &__menu {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    margin: 0;
+    list-style: none;
+  }
+
+  &__item,
+  &__link {
+    color: inherit;
+  }
+
+  &__item {
+    margin: 0 20px;
+  }
+
+  &__link {
+    text-decoration: none;
+  }
+}

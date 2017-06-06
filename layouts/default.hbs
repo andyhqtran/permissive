@@ -28,6 +28,7 @@
     {{!-- Stylesheets --}}
     <link rel="stylesheet" type="text/css" href="{{asset "css/ionicons.min.css"}}" />
     <link rel="stylesheet" type="text/css" href="{{asset "css/normalize.css"}}" />
+    <link rel="stylesheet" type="text/css" href="{{asset "css/prism.css"}}" />
     <link rel="stylesheet" type="text/css" href="{{asset "css/main.css"}}" />
 
     {{!-- Ghost outputs important style and meta data with this tag --}}
@@ -38,8 +39,12 @@
     {{!-- All the main content gets inserted here, index.hbs, post.hbs, etc --}}
     {{{body}}}
 
+    {{!-- Footer --}}
+    {{> footer}}
+
     {{!-- JavaScript --}}
     <script type="text/javascript" src="{{asset "js/jquery.js"}}"></script>
+    <script type="text/javascript" src="{{asset "js/prism.js"}}"></script>
 
     {{!-- Ghost outputs important scripts and data with this tag --}}
     {{ghost_foot}}
