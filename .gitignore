@@ -3,6 +3,7 @@ node_modules
 npm-debug.log
 
 assets/css/main.css
+assets/css/layouts
 assets/js/index.js
 assets/js/blog.js
 assets/js/post.js

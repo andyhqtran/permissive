@@ -1,4 +1,4 @@
-{{!< layouts/default}}
+{{!< layouts/post}}
 {{!-- The tag above means - insert everything in this file into the {body} of the layout/default.hbs template --}}
 
 {{!-- Post Content --}}
@@ -9,39 +9,39 @@
     role="main"
   >
     <article
-      class="article {{#if image}}has-thumbnail{{/if}}"
+      class="post {{#if feature_image}}has-thumbnail{{/if}}"
       id="{{id}}-{{slug}}"
     >
       <header
-        class="article__header"
+        class="post__header"
         {{#if feature_image}}
           style="background-image: url('{{feature_image}}');"
         {{/if}}
       >
         {{#foreach tags visibility="internal"}}
           {{#if name}}
-            <div class="article__label">{{name}}</div>
+            <div class="post__label">{{name}}</div>
           {{/if}}
         {{/foreach}}
 
-        <h1 class="article__title">{{title}}</h1>
+        <h1 class="post__title">{{title}}</h1>
 
         {{!-- TODO, @ghost needs to add sub-title support --}}
-        {{!-- <h2 class="article__sub-title">{{sub-title}}</h2> --}}
+        {{!-- <h2 class="post__sub-title">{{sub-title}}</h2> --}}
         <time
-          class="article__date"
+          class="post__date"
           datetime="{{date format="YYYY-MM-DD"}}"
         >
           {{date format="MMMM, DD YYYY"}}
         </time>
       </header>
 
-      <section class="article__content">
+      <section class="post__content">
         {{content}}
       </section>
 
       {{!--
-      <footer class="article__footer">
+      <footer class="post__footer">
         {{> author}}
         {{> social-share}}
         {{> subscribe}}
