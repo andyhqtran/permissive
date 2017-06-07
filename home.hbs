@@ -7,16 +7,12 @@
   id="content"
   role="main"
   {{#if @blog.cover}}
-    style="background: url({{@blog.cover}}) center no-repeat fixed; background-size: cover;"
+    style="background: url({{@blog.cover_image}}) center no-repeat fixed; background-size: cover;"
   {{/if}}
 >
   <div class="site-info">
     <h1 class="site-info__title">{{@blog.title}}</h1>
     <p class="site-info__description">{{@blog.description}}</p>
-
-    {{> social-menu}}
-
-    {{> site-footer}}
   </div>
 </main>
 
