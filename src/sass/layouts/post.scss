@@ -117,7 +117,7 @@
       .button {
         margin: 0 10px 0 0;
         color: map-get($text-colors, secondary);
-        font-weight: map-get($font-weight, semibold);
+        font-weight: map-get($font-weights, semibold);
       }
     }
   }

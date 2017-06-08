@@ -1,8 +1,5 @@
 {{!-- Navigation --}}
 <footer class="footer">
-  <div class="footer__top">
-  </div>
-
   <div class="footer__main">
     <div class="container">
       {{!-- Navigation --}}
@@ -11,6 +8,16 @@
       {{/if}}
 
       {{> social-navigation}}
+    </div>
+    <div class="container">
+     {{#if @labs.subscribers}}
+        {{subscribe_form
+          form_class="subscribe-form"
+          input_class="input is-large"
+          button_class="button is-ghost is-primary"
+          placeholder="Enter your email"
+        }}
+      {{/if}}
     </div>
   </div>
 

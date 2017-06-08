@@ -18,12 +18,17 @@ body {
   max-width: 1440px;
   padding: 0 80px;
   box-sizing: border-box;
+
+  @media (max-width: 768px) {
+    padding: 0 20px;
+  }
 }
 
 @import './base/typography';
 
 @import './modules/button';
 @import './modules/header';
+@import './modules/input';
 @import './modules/logo';
 @import './modules/navigation';
 @import './modules/footer';
