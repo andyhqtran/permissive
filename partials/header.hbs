@@ -1,6 +1,20 @@
 <header class="header">
   <div class="container">
     {{> logo}}
+
     {{navigation}}
+
+    <nav class="navigation" role="navigation">
+      <ul class="navigation__menu" role="menu">
+        <li class="navigation__item" role="presentation" style="position: relative;">
+          <a class="navigation__link" href="#bookmark-menu">
+            <button class="button is-round">
+              <span class="ion ion-bookmark"></span>
+            </button>
+          </a>
+          {{> bookmark-menu}}
+        </li>
+      </ul>
+    </nav>
   </div>
 </header>

@@ -1,5 +1,7 @@
 // Header (Block)
 .header {
+  z-index: 10;
+  position: relative;
   background: $white;
   height: 80px;
   box-shadow: 0 2px 5px rgba($black, 0.05);
@@ -13,18 +15,19 @@
     display: flex;
     align-items: center;
     flex-direction: row;
-    justify-content: center;
-  }
-
-  .container {
-    justify-content: space-between;
+    justify-content: flex-start;
   }
 
   .logo {
     height: 24px;
+    margin: 0 40px 0 0;
   }
 
   .navigation {
+    &:first-of-type {
+      flex-grow: 1;
+    }
+
     &__item {
       color: map-get($text-colors, body);
 

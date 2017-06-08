@@ -1,0 +1,41 @@
+.button {
+  outline: none;
+  display: inline-block;
+  background: #F6F6F6;
+  height: 40px;
+  border: 0;
+  border-radius: 6px;
+  padding: 0 20px;
+  color: map-get($text-colors, primary);
+  font-size: rem(14);
+  font-weight: map-get($font-weights, medium);
+  line-height: 40px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.button {
+  &.is-block {
+    display: block;
+    width: 100%;
+  }
+
+  &.is-primary {
+    background: map-get($theme-colors, primary);
+    color: $white;
+  }
+
+  &.is-round {
+    width: 40px;
+    padding: 0;
+    border-radius: 100%;
+  }
+
+  &.is-ghost {
+    background: transparent;
+
+    &.is-primary {
+      color: map-get($theme-colors, primary);
+    }
+  }
+}
