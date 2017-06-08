@@ -1,16 +1,21 @@
 .input {
+  outline: none;
   display: inline-block;
   background: $white;
   width: 220px;
   height: 40px;
   border: 0;
-  border-radius: 6px;
+  border-radius: 4px;
   box-shadow: inset 0 0 0 1px #F6F6F6;
   padding: 12px 20px;
   box-sizing: border-box;
   font-family: map-get($fonts, header);
   font-size: rem(14);
   font-weight: map-get($font-weights, regular);
+
+  &:focus {
+    box-shadow: inset 0 0 0 1px map-get($theme-colors, primary);
+  }
 
   &::placeholder {
     color: map-get($text-colors, secondary);

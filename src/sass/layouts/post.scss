@@ -16,6 +16,7 @@
 // Article (Elements)
 .post {
   &__header {
+    position: relative;
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -28,6 +29,13 @@
     box-sizing: border-box;
     text-align: center;
     overflow: hidden;
+
+    .button {
+      position: absolute;
+      top: 40px;
+      right: 40px;
+      color: map-get($text-colors, primary);
+    }
   }
 
   &__label {
@@ -117,7 +125,6 @@
       .button {
         margin: 0 10px 0 0;
         color: map-get($text-colors, secondary);
-        font-weight: map-get($font-weights, semibold);
       }
     }
   }
@@ -143,6 +150,11 @@
 
         * {
           z-index: 2;
+        }
+
+        .button {
+          box-shadow: 0 0 0 1px $white;
+          color: $white;
         }
       }
 

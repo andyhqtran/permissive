@@ -4,7 +4,7 @@
   background: #F6F6F6;
   height: 40px;
   border: 0;
-  border-radius: 6px;
+  border-radius: 4px;
   padding: 0 20px;
   color: map-get($text-colors, primary);
   font-family: map-get($fonts, header);
@@ -27,6 +27,12 @@
     color: $white;
   }
 
+  &.is-large {
+    height: 60px;
+    font-size: rem(20);
+    line-height: 60px;
+  }
+
   &.is-small {
     height: 30px;
     padding: 0 10px;
@@ -39,6 +45,10 @@
     border-radius: 100%;
     padding: 0;
 
+    &.is-large {
+      width: 60px;
+    }
+
     &.is-small {
       width: 30px;
     }
@@ -46,7 +56,7 @@
 
   &.is-outline {
     background: transparent;
-    box-shadow: inset 0 0 0 2px #F6F6F6;
+    box-shadow: inset 0 0 0 1px #F6F6F6;
 
     &.is-primary {
       box-shadow: inset 0 0 0 2px map-get($theme-colors, primary);
