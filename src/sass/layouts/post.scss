@@ -6,6 +6,7 @@
 // Article (Block)
 .post {
   background: $white;
+  width: 80%;
   max-width: 960px;
   border-radius: 6px;
   box-shadow: 0 2px 5px rgba($black, 0.05);
@@ -85,6 +86,28 @@
       &__title {
         color: inherit;
       }
+    }
+  }
+}
+
+
+
+@media (max-width: 768px) {
+  .header {
+    margin: 0;
+  }
+
+  .post {
+    width: 100%;
+    margin: 0;
+
+    &,
+    &__header {
+      border-radius: 0;
+    }
+
+    &__content {
+      padding:   80px;
     }
   }
 }
