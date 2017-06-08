@@ -15,12 +15,14 @@ body {
 
 .container {
   width: 100%;
-  max-width: 1140px;
+  max-width: 1440px;
   padding: 0 80px;
   box-sizing: border-box;
 }
 
 @import './base/typography';
 
+@import './modules/header';
+@import './modules/logo';
 @import './modules/navigation';
 @import './modules/footer';

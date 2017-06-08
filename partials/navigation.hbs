@@ -2,7 +2,7 @@
   <ul class="navigation__menu" role="menu">
     {{#foreach navigation}}
       <li
-        class="navigation__item navigation__item--{{slug}}{{#if current}} navigation__item--active{{/if}}"
+        class="navigation__item navigation__item--{{slug}}{{#if current}} is-active{{/if}}"
         role="presentation"
       >
         <a class="navigation__link" href="{{url absolute="true"}}">{{label}}</a>

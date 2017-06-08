@@ -1,0 +1,37 @@
+// Header (Block)
+.header {
+  background: $white;
+  height: 80px;
+  box-shadow: 0 2px 5px rgba($black, 0.05);
+  margin: 0 0 40px;
+}
+
+// Header (Elements)
+.header {
+  &,
+  .container {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .container {
+    justify-content: space-between;
+  }
+
+  .logo {
+    height: 24px;
+  }
+
+  .navigation {
+    &__item {
+      color: map-get($text-colors, body);
+
+      &.is-active {
+        color: map-get($text-colors, primary);
+        font-weight: map-get($font-weights, medium);
+      }
+    }
+  }
+}

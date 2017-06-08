@@ -3,21 +3,31 @@
   box-shadow: 0 2px 5px rgba($black, 0.05);
   font-size: rem(13);
 
+  &__top,
+  &__main,
+  &__bottom {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  &__top,
+  &__main {
+    border-bottom: 1px solid #F6F6F6;
+  }
+
   &__main {
     padding: 60px 0;
+
+    .navigation {
+      margin: 0 30px;
+      font-weight: map-get($font-weights, medium);
+    }
   }
 
   &__bottom {
     height: 80px;
-    border-top: 1px solid #F6F6F6;
-
-    &,
-    .container {
-      display: flex;
-      align-items: center;
-      flex-direction: row;
-      justify-content: center;
-    }
   }
 
   &__copyright {
@@ -29,5 +39,12 @@
       font-weight: map-get($font-weights, medium);
       text-decoration: none;
     }
+  }
+
+  .container {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: center;
   }
 }

@@ -6,7 +6,7 @@
 // Article (Block)
 .post {
   background: $white;
-  max-width: 1000px;
+  max-width: 960px;
   border-radius: 6px;
   box-shadow: 0 2px 5px rgba($black, 0.05);
   margin: 0 auto 40px;
@@ -22,37 +22,25 @@
     background-size: cover;
     height: 400px;
     border-bottom: 1px solid #F6F6F6;
+    border-radius: 6px 6px 0 0;
     padding: 40px;
     box-sizing: border-box;
     text-align: center;
+    overflow: hidden;
   }
 
   &__label {
-    position: relative;
     background: map-get($theme-colors, primary);
     height: 24px;
     border-radius: 4px;
     margin: 0 0 40px;
-    padding: 0 10px 0 4px;
+    padding: 0 10px;
     color: $white;
     font-family: map-get($fonts, header);
     font-size: rem(10);
     font-weight: map-get($font-weights, bold);
     line-height: 24px;
     text-transform: uppercase;
-
-    &:before {
-      content: '';
-      position: absolute;
-      top: 0;
-      bottom: 0;
-      left: 0;
-      display: block;
-      background: map-get($theme-colors, primary);
-      width: 10px;
-      height: 100%;
-      border-radius: 4px 0 0 4px;
-    }
   }
 
   &__title {

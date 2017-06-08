@@ -68,9 +68,12 @@ p {
 
 // Divider
 hr {
+  display: block;
   background: #F5F5F5;
+  width: 80%;
   height: 1px;
   border: 0;
+  margin: 40px auto;
 }
 
 // Link

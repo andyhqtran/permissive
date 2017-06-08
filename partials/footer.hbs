@@ -1,10 +1,17 @@
 {{!-- Navigation --}}
 <footer class="footer">
+  <div class="footer__top">
+  </div>
+
   <div class="footer__main">
-    {{!-- Navigation --}}
-    {{#if @blog.navigation}}
-      {{navigation}}
-    {{/if}}
+    <div class="container">
+      {{!-- Navigation --}}
+      {{#if @blog.navigation}}
+        {{navigation}}
+      {{/if}}
+
+      {{> social-navigation}}
+    </div>
   </div>
 
   <div class="footer__bottom">
