@@ -54,13 +54,57 @@
         {{content}}
       </section>
 
-      {{!--
+      <section class="post__author">
+        {{#author}}
+          <div class="author">
+            <div class="author__image">
+              <img alt="{{name}}" src="{{profile_image}}" />
+            </div>
+            <div class="author__content">
+              <h4 class="author__name">{{name}}</h4>
+              <div class="author__bio">{{bio}}</div>
+
+              <nav class="navigation" role="navigation">
+                <ul class="navigation__menu" role="menu">
+                  <li class="navigation__item" role="presentation">
+                    <span class="ion ion-location"></span>
+                    <span>{{location}}</span>
+                  </li>
+
+                  <li class="navigation__item" role="presentation">
+                    <a class="navigation__link" href="{{website}}">
+                      <span class="ion ion-link"></span>
+                      <span>{{website}}</span>
+                    </a>
+                  </li>
+
+                  <li class="navigation__item" role="presentation">
+                    <a class="navigation__link" href="{{facebook}}">
+                      <span class="ion ion-social-facebook"></span>
+                    </a>
+                  </li>
+
+                  <li class="navigation__item" role="presentation">
+                    <a class="navigation__link" href="{{twitter}}">
+                      <span class="ion ion-social-twitter"></span>
+                    </a>
+                  </li>
+                </ul>
+              </nav>
+            </div>
+          </div>
+        {{/author}}
+      </section>
+
       <footer class="post__footer">
-        {{> author}}
-        {{> social-share}}
-        {{> subscribe}}
+        <div class="tags">
+          {{#if tags}}
+            {{#foreach tags}}
+              <a class="button is-outline is-small" href="{{url}}">{{name}}</a>
+            {{/foreach}}
+          {{/if}}
+        </div>
       </footer>
-      --}}
     </article>
   </main>
 
