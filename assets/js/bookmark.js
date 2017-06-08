@@ -1,1 +1,0 @@
-"use strict";$(document).ready(function(){$("#bookmarkMenuOpen").on("click",function(){$(".bookmark-menu").toggleClass("is-active")})});
