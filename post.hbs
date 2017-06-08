@@ -18,21 +18,25 @@
           style="background-image: url('{{feature_image}}');"
         {{/if}}
       >
-        {{#has tag="#blog"}}
-            <div class="post__label">Blog</div>
-        {{/has}}
+        {{#if featured}}
+          <div class="post__label">Featured</div>
+        {{else}}
+          {{#has tag="#blog"}}
+              <div class="post__label">Blog</div>
+          {{/has}}
 
-        {{#has tag="#case-study"}}
-            <div class="post__label">Case Study</div>
-        {{/has}}
+          {{#has tag="#case-study"}}
+              <div class="post__label">Case Study</div>
+          {{/has}}
 
-        {{#has tag="#freebie"}}
-            <div class="post__label">Freebie</div>
-        {{/has}}
+          {{#has tag="#freebie"}}
+              <div class="post__label">Freebie</div>
+          {{/has}}
 
-        {{#has tag="#tutorial"}}
-            <div class="post__label">Tutorial</div>
-        {{/has}}
+          {{#has tag="#tutorial"}}
+              <div class="post__label">Tutorial</div>
+          {{/has}}
+        {{/if}}
 
         <h1 class="post__title">{{title}}</h1>
 
