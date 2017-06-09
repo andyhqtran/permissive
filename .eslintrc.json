@@ -3,14 +3,15 @@
     "globals": {
       "document": true,
       "ghost": true,
+      "localStorage": true,
       "jQuery": true,
       "window": true,
       "$": true
     },
     "installedESLint": true,
     "plugins": [
-        "react",
-        "jsx-a11y",
-        "import"
+      "react",
+      "jsx-a11y",
+      "import"
     ]
 }
