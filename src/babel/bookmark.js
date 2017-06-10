@@ -84,17 +84,16 @@ $(document).ready(() => {
 
     deleteBookmarkData(postId);
 
-    parent.remove();
-
-
     $('[data-bookmark-action="save"]').attr('style', '');
-    $('[data-bookmark-action="save"]').find('span').addClass('ion-checkmark-round');
+    $('[data-bookmark-action="save"]').find('span').removeClass('ion-checkmark-round');
 
-    if (parent.length > 0) {
+    if ($('.bookmark-menu__list').children().length === 1) {
       const listItem = $('<li class="bookmark-menu__list-item is-null" />').text('No post have been saved.');
 
       $('.bookmark-menu__list').append(listItem);
     }
+
+    parent.remove();
   });
 
   if ($.isEmptyObject(JSON.stringify(localStorage.getItem('bookmarks')))) {
