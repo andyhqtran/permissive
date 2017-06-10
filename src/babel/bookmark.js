@@ -74,6 +74,9 @@ $(document).ready(() => {
     if ($.isEmptyObject(getBookmarkData())) {
       const listItem = $('<li class="bookmark-menu__list-item is-null" />').text('No post have been saved.');
 
+      $('[data-bookmark-action="save"]').attr('style', '');
+      $('[data-bookmark-action="save"]').find('span').removeClass('ion-checkmark-round');
+
       $('.bookmark-menu__list').append(listItem);
     }
   });
