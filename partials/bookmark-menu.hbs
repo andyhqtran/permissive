@@ -2,7 +2,10 @@
 <div class="bookmark-menu">
   {{!-- Bookmark Header --}}
   <header class="bookmark-menu__header">
-    Bookmarks
+    <span>Bookmarks</span>
+    <button class="button is-ghost" data-bookmark-action="clear">
+      <span class="ion ion-trash-b"></span>
+    </button>
   </header>
 
   {{!-- Bookmark Content --}}
@@ -12,6 +15,6 @@
 
   {{!-- Bookmark Footer --}}
   <footer class="bookmark-menu__footer">
-    <button class="button is-block is-ghost">View All</button>
+    <a class="button is-block is-ghost" href="{{@blog.url}}bookmarks">View All</a>
   </footer>
 </div>

@@ -6,6 +6,7 @@
   border: 0;
   border-radius: 4px;
   padding: 0 20px;
+  box-sizing: border-box;
   color: map-get($text-colors, primary);
   font-family: map-get($fonts, header);
   font-size: rem(14);
