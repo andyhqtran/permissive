@@ -100,15 +100,15 @@
         {{/author}}
       </section>
 
-      <footer class="post__footer">
-        <div class="tags">
-          {{#if tags}}
+      {{#if tags}}
+        <footer class="post__footer">
+          <div class="tags">
             {{#foreach tags}}
               <a class="button is-outline is-small" href="{{url}}">{{name}}</a>
             {{/foreach}}
-          {{/if}}
-        </div>
-      </footer>
+          </div>
+        </footer>
+      {{/if}}
     </article>
   </main>
 
