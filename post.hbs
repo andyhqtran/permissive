@@ -12,103 +12,105 @@
       class="post {{#if feature_image}}has-thumbnail{{/if}}"
       id="{{id}}-{{slug}}"
     >
-      <header
-        class="post__header"
-        {{#if feature_image}}
-          style="background-image: url('{{feature_image}}');"
-        {{/if}}
-      >
-        <button class="button is-large is-outline is-round" data-bookmark-action="save" data-bookmark-id="{{id}}">
-          <span class="ion ion-bookmark"></span>
-        </button>
-
-        {{#if featured}}
-          <div class="post__label">Featured</div>
-        {{else}}
-          {{#has tag="#blog"}}
-              <div class="post__label">Blog</div>
-          {{/has}}
-
-          {{#has tag="#case-study"}}
-              <div class="post__label">Case Study</div>
-          {{/has}}
-
-          {{#has tag="#freebie"}}
-              <div class="post__label">Freebie</div>
-          {{/has}}
-
-          {{#has tag="#tutorial"}}
-              <div class="post__label">Tutorial</div>
-          {{/has}}
-        {{/if}}
-
-        <h1 class="post__title">{{title}}</h1>
-
-        {{!-- TODO, @ghost needs to add sub-title support --}}
-        {{!-- <h2 class="post__sub-title">{{sub-title}}</h2> --}}
-        <time
-          class="post__date"
-          datetime="{{date format="YYYY-MM-DD"}}"
+      <div class="card">
+        <header
+          class="post__header"
+          {{#if feature_image}}
+            style="background-image: url('{{feature_image}}');"
+          {{/if}}
         >
-          {{date format="MMMM, DD YYYY"}}
-        </time>
-      </header>
+          <button class="button is-large is-outline is-round" data-bookmark-action="save" data-bookmark-id="{{id}}">
+            <span class="ion ion-bookmark"></span>
+          </button>
 
-      <section class="post__content">
-        {{content}}
-      </section>
+          {{#if featured}}
+            <div class="post__label">Featured</div>
+          {{else}}
+            {{#has tag="#blog"}}
+                <div class="post__label">Blog</div>
+            {{/has}}
 
-      <section class="post__author">
-        {{#author}}
-          <div class="author">
-            <div class="author__image">
-              <img alt="{{name}}" src="{{profile_image}}" />
+            {{#has tag="#case-study"}}
+                <div class="post__label">Case Study</div>
+            {{/has}}
+
+            {{#has tag="#freebie"}}
+                <div class="post__label">Freebie</div>
+            {{/has}}
+
+            {{#has tag="#tutorial"}}
+                <div class="post__label">Tutorial</div>
+            {{/has}}
+          {{/if}}
+
+          <h1 class="post__title">{{title}}</h1>
+
+          {{!-- TODO, @ghost needs to add sub-title support --}}
+          {{!-- <h2 class="post__sub-title">{{sub-title}}</h2> --}}
+          <time
+            class="post__date"
+            datetime="{{date format="YYYY-MM-DD"}}"
+          >
+            {{date format="MMMM, DD YYYY"}}
+          </time>
+        </header>
+
+        <section class="post__content">
+          {{content}}
+        </section>
+
+        <section class="post__author">
+          {{#author}}
+            <div class="author">
+              <div class="author__image">
+                <img alt="{{name}}" src="{{profile_image}}" />
+              </div>
+              <div class="author__content">
+                <h4 class="author__name">{{name}}</h4>
+                <div class="author__bio">{{bio}}</div>
+
+                <nav class="navigation" role="navigation">
+                  <ul class="navigation__menu" role="menu">
+                    <li class="navigation__item" role="presentation">
+                      <span class="ion ion-location"></span>
+                      <span>{{location}}</span>
+                    </li>
+
+                    <li class="navigation__item" role="presentation">
+                      <a class="navigation__link" href="{{website}}">
+                        <span class="ion ion-link"></span>
+                        <span>{{website}}</span>
+                      </a>
+                    </li>
+
+                    <li class="navigation__item" role="presentation">
+                      <a class="navigation__link" href="{{facebook}}">
+                        <span class="ion ion-social-facebook"></span>
+                      </a>
+                    </li>
+
+                    <li class="navigation__item" role="presentation">
+                      <a class="navigation__link" href="{{twitter}}">
+                        <span class="ion ion-social-twitter"></span>
+                      </a>
+                    </li>
+                  </ul>
+                </nav>
+              </div>
             </div>
-            <div class="author__content">
-              <h4 class="author__name">{{name}}</h4>
-              <div class="author__bio">{{bio}}</div>
+          {{/author}}
+        </section>
 
-              <nav class="navigation" role="navigation">
-                <ul class="navigation__menu" role="menu">
-                  <li class="navigation__item" role="presentation">
-                    <span class="ion ion-location"></span>
-                    <span>{{location}}</span>
-                  </li>
-
-                  <li class="navigation__item" role="presentation">
-                    <a class="navigation__link" href="{{website}}">
-                      <span class="ion ion-link"></span>
-                      <span>{{website}}</span>
-                    </a>
-                  </li>
-
-                  <li class="navigation__item" role="presentation">
-                    <a class="navigation__link" href="{{facebook}}">
-                      <span class="ion ion-social-facebook"></span>
-                    </a>
-                  </li>
-
-                  <li class="navigation__item" role="presentation">
-                    <a class="navigation__link" href="{{twitter}}">
-                      <span class="ion ion-social-twitter"></span>
-                    </a>
-                  </li>
-                </ul>
-              </nav>
+        {{#if tags}}
+          <footer class="post__footer">
+            <div class="tags">
+              {{#foreach tags}}
+                <a class="button is-outline is-small" href="{{url}}">{{name}}</a>
+              {{/foreach}}
             </div>
-          </div>
-        {{/author}}
-      </section>
-
-      {{#if tags}}
-        <footer class="post__footer">
-          <div class="tags">
-            {{#foreach tags}}
-              <a class="button is-outline is-small" href="{{url}}">{{name}}</a>
-            {{/foreach}}
-          </div>
-        </footer>
-      {{/if}}
+          </footer>
+        {{/if}}
+      </div>
     </article>
   </main>
 
