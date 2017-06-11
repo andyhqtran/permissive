@@ -2,6 +2,7 @@
 node_modules
 npm-debug.log
 
+assets/vendors
 assets/css/main.css
 assets/css/layouts
 assets/css/lib

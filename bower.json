@@ -1,0 +1,28 @@
+{
+  "name": "permissive",
+  "description": "A minimalist theme for Ghost.",
+  "main": "index.hbs",
+  "authors": [
+    "https://github.com/andyhqtran/Permissive/graphs/contributors"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "ghost",
+    "theme"
+  ],
+  "homepage": "https://github.com/andyhqtran/Permissive",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "vue": "^2.3.4",
+    "prism": "^1.6.0",
+    "normalize-css": "normalize.css#^7.0.0",
+    "Ionicons": "ionicons#^2.0.1"
+  }
+}
