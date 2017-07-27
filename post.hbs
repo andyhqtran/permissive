@@ -19,7 +19,7 @@
             style="background-image: url('{{feature_image}}');"
           {{/if}}
         >
-          <button class="button is-large is-outline is-round" data-bookmark-action="save" data-bookmark-id="{{id}}">
+          <button class="button is-large is-outline is-round" id="bookmark-save" data-bookmark-action="save" data-bookmark-id="{{id}}">
             <span class="ion ion-bookmark"></span>
           </button>
 
@@ -116,10 +116,10 @@
 
   <script type="text/javascript">
     window.post = {
-      id: '{{id}}',
-      excerpt: '{{excerpt}}',
-      title: '{{title}}',
-      url: '{{url}}',
+      id: "{{id}}",
+      excerpt: "{{excerpt}}",
+      title: "{{title}}",
+      url: "{{url}}",
     };
   </script>
 {{/post}}

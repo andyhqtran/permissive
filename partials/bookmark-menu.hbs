@@ -1,20 +1,31 @@
-{{!-- Bookmark Menu --}}
 <div class="bookmark-menu">
-  {{!-- Bookmark Header --}}
   <header class="bookmark-menu__header">
     <span>Bookmarks</span>
-    <button class="button is-ghost" data-bookmark-action="clear">
-      <span class="ion ion-trash-b"></span>
+
+    <button class="button is-ghost" v-on:click="bookmarks = {}">
+      <span class="ion ion-trash-b" v-if="Object.keys(bookmarks).length > 0"></span>
     </button>
   </header>
 
-  {{!-- Bookmark Content --}}
   <section class="bookmark-menu__content">
-    <ul class="bookmark-menu__list"></ul>
+    <ul class="bookmark-menu__list" v-if="Object.keys(bookmarks).length > 0">
+      <li class="bookmark-menu__list-item" v-for="bookmark in bookmarks">
+        <div class="bookmark-menu__list-content">
+          <h6>${bookmark.title}</h6>
+          <p>${bookmark.excerpt}</p>
+        </div>
+        <a class="bookmark-menu__list-delete">
+          <span class="ion ion-close-circled" v-on:click="Vue.delete(bookmarks, bookmark.id)"></span>
+        </a>
+      </li>
+    </ul>
+
+    <ul class="bookmark-menu__list" v-else>
+      <li class="bookmark-menu__list-item is-null">No post have been saved.</li>
+    </ul>
   </section>
 
-  {{!-- Bookmark Footer --}}
-  <footer class="bookmark-menu__footer">
-    <a class="button is-block is-ghost" href="{{@blog.url}}bookmarks">View All</a>
-  </footer>
+ {{!--  <footer class="bookmark-menu__footer">
+    <a class="button is-block is-ghost" href="#bookmarks">View All</a>
+  </footer> --}}
 </div>
