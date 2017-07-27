@@ -34,6 +34,15 @@ gulp.task('babel:watch', () => {
   gulp.watch('./babel/**/*.js', ['babel']);
 });
 
+gulp.task('handlebars', () => gulp.src('./**/*.hbs')
+  .pipe(refresh()));
+
+gulp.task('handlebars:watch', () => {
+  refresh.listen();
+
+  gulp.watch('./**/*.hbs', ['handlebars']);
+});
+
 gulp.task('sass', () => gulp.src('./src/sass/**/*.scss')
   .pipe(sourcemaps.init())
   .pipe(sass().on('error', sass.logError))
@@ -58,6 +67,7 @@ gulp.task('sass:watch', () => {
 gulp.task('watch', () => {
   refresh.listen();
 
+  gulp.watch('./**/*.hbs', ['handlebars']);
   gulp.watch('./src/sass/**/*.scss', ['sass']);
   gulp.watch('./src/babel/**/*.js', ['babel']);
 });
