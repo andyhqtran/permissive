@@ -8,7 +8,7 @@
     id="content"
     role="main"
     {{#if @blog.cover}}
-      style="background: url({{@blog.cover}}) right bottom no-repeat fixed; background-size: cover;"
+      style="background: url({{@blog.cover_image}}) right bottom no-repeat fixed; background-size: cover;"
     {{/if}}
   >
     <div class="post">
@@ -20,9 +20,9 @@
           <h2 class="article__sub-title"></h2>
         </header>
 
-        {{#if image}}
+        {{#if feature_image}}
           <section class="article__thumbnail">
-            <img alt="{{title}}" src="{{image}}" />
+            <img alt="{{title}}" src="{{image_url}}" />
           </section>
         {{/if}}
 
