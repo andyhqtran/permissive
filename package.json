@@ -39,10 +39,10 @@
     "preact": "^8.4.2"
   },
   "scripts": {
-    "start": "concurrently \"gulp babel\" \"gulp sass\" \"gulp watch\"",
-    "lint": "npm run lint-js && npm run lint-sass",
-    "lint-js": "eslint ./src/babel",
-    "lint-sass": "sass-lint ./src/sass",
+    "build": "webpack --config webpack.config.js",
+    "lint:js": "eslint ./src/babel",
+    "lint:sass": "sass-lint ./src/sass",
+    "lint": "npm run lint:js && npm run lint:sass",
     "test": "npm run lint"
   }
 }
