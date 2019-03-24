@@ -10,7 +10,7 @@
   >
     <article
       class="post {{#if feature_image}}has-thumbnail{{/if}}"
-      id="{{id}}-{{slug}}"
+      id="{{comment_id}}-{{slug}}"
     >
       <div class="card">
         <header
@@ -19,7 +19,7 @@
             style="background-image: url('{{feature_image}}');"
           {{/if}}
         >
-          <button class="button is-large is-outline is-round" id="bookmark-save" data-bookmark-action="save" data-bookmark-id="{{id}}">
+          <button class="button is-large is-outline is-round" id="bookmark-save" data-bookmark-action="save" data-bookmark-id="{{comment_id}}">
             <span class="ion ion-bookmark"></span>
           </button>
 
@@ -60,7 +60,7 @@
         </section>
 
         <section class="post__author">
-          {{#author}}
+          {{#primary_author}}
             <div class="author">
               <div class="author__image">
                 <img alt="{{name}}" src="{{profile_image}}" />
@@ -98,7 +98,7 @@
                 </nav>
               </div>
             </div>
-          {{/author}}
+          {{/primary_author}}
         </section>
 
         {{#if tags}}
@@ -116,7 +116,7 @@
 
   <script type="text/javascript">
     window.post = {
-      id: "{{id}}",
+      id: "{{comment_id}}",
       excerpt: "{{excerpt}}",
       title: "{{title}}",
       url: "{{url}}",

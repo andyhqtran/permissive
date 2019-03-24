@@ -1,12 +1,11 @@
 {{!< layouts/default}}
 {{!-- The tag above means - insert everything in this file into the {body} of the default.hbs template --}}
-
 {{!-- Main Content --}}
 <main
   class="content"
   id="content"
   role="main"
-  {{#if @blog.cover}}
+  {{#if @blog.cover_image}}
     style="background: url({{@blog.cover_image}}) center no-repeat fixed; background-size: cover;"
   {{/if}}
 >

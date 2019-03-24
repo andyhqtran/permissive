@@ -26,7 +26,8 @@
     "url": "https://andytran.me"
   },
   "engines": {
-    "ghost": ">=0.9.0 <=1.0.0"
+    "ghost": ">=2.0.0",
+    "ghost-api": "v2"
   },
   "license": "MIT",
   "screenshots": {
@@ -42,6 +43,7 @@
   },
   "keywords": [
     "ghost",
+    "ghost-theme",
     "theme"
   ],
   "dependencies": {
