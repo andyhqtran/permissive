@@ -62,3 +62,6 @@ typings/
 
 # macOS filesystem
 .DS_Store
+
+# Assets
+assets
