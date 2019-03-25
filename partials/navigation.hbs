@@ -1,12 +1,33 @@
 <nav class="navigation" role="navigation">
-  <ul class="navigation__menu" role="menu">
+  <div class="navigation__menu" role="menu">
     {{#foreach navigation}}
-      <li
-        class="navigation__item navigation__item--{{slug}}{{#if current}} is-active{{/if}}"
-        role="presentation"
+      <a
+        class="navigation__item navigation__item--{{slug}}{{#if current}} navigation__item-active{{/if}}"
+        role="menuitem"
+        href="{{url absolute="true"}}"
       >
-        <a class="navigation__link" href="{{url absolute="true"}}">{{label}}</a>
-      </li>
+        {{label}}
+      </a>
     {{/foreach}}
-  </ul>
+  </div>
+  <div class="navigation__menu" role="menu">
+    {{#if @site.facebook}}
+      <a
+        class="navigation__item navigation__item--{{slug}}{{#if current}} navigation__item-active{{/if}}"
+        role="menuitem"
+        href="{{facebook_url @site.facebook}}"
+      >
+        Facebook
+      </a>
+    {{/if}}
+    {{#if @site.twitter}}
+      <a
+        class="navigation__item navigation__item--{{slug}}{{#if current}} navigation__item-active{{/if}}"
+        role="menuitem"
+        href="{{twitter_url @site.twitter}}"
+      >
+        Twitter
+      </a>
+    {{/if}}
+  </div>
 </nav>
