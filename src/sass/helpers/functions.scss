@@ -1,0 +1,23 @@
+@function rem($pixels, $context: 16) {
+  @if unitless($pixels) {
+    $pixels: $pixels * 1px;
+  }
+
+  @if unitless($context) {
+    $context: $context * 1px;
+  }
+
+  @return $pixels / $context * 1rem;
+}
+
+@function font($font) {
+  @return map-get($fonts, $font);
+}
+
+@function font-weight($weight) {
+  @return map-get($font-weights, $weight);
+}
+
+@function text-color($color) {
+  @return map-get($text-color, $color);
+}

@@ -1,0 +1,115 @@
+// Helpers
+@import '../helpers/colors';
+@import '../helpers/fonts';
+@import '../helpers/functions';
+
+.bookmark-menu {
+  position: absolute;
+  top: calc(100% - 20px);
+  right: -20px;
+  background: $white;
+  width: 360px;
+  border-radius: 6px;
+  box-shadow: inset 0 0 0 1px #F5F5F5, 0 2px 20px rgba($black, 0.05);
+  margin: 10px 0 0;
+  box-sizing: border-box;
+  transition: 0.2s ease;
+  overflow: hidden;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+
+  &__header {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-between;
+    border-bottom: 1px solid #F6F6F6;
+    padding: 10px 0 10px 20px;
+    box-sizing: border-box;
+    color: map-get($text-colors, primary);
+    font-size: rem(14);
+    font-weight: map-get($font-weights, medium);
+  }
+
+  &__content {
+    position: relative;
+    border-radius: 0 0 6px 6px;
+    overflow: hidden;
+
+    &:before,
+    &:after {
+      content: '';
+      z-index: 1;
+      position: absolute;
+      left: 20px;
+      display: block;
+      width: calc(100% - 40px);
+      height: 30px;
+    }
+
+    &:before {
+      top: 0;
+      background: linear-gradient($white, transparent);
+    }
+
+    &:after {
+      bottom: 0;
+      background: linear-gradient(transparent, $white);
+    }
+  }
+
+  &__list {
+    max-height: 200px;
+    margin: 0;
+    padding: 10px 0;
+    overflow: auto;
+    list-style: none;
+
+    &-item {
+      display: flex;
+      align-items: center;
+      flex-direction: row;
+      background: $white;
+      border-bottom: 1px solid #F6F6F6;
+      margin: 0;
+      padding: 10px 20px;
+
+      &:last-child {
+        border-bottom: 0;
+      }
+
+      a {
+        text-decoration: none;
+      }
+
+      p {
+        margin: 0;
+        font-size: rem(10);
+        line-height: rem(20);
+      }
+    }
+
+    &-content {
+      display: block;
+      flex-grow: 1;
+      box-sizing: border-box;
+    }
+
+    &-delete {
+      margin: 0 0 0 20px;
+    }
+  }
+
+  &__footer {
+    border-top: 1px solid #F6F6F6;
+  }
+
+  &.is-active {
+    display: block;
+    top: 100%;
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+  }
+}

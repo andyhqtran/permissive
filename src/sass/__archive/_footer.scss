@@ -1,0 +1,86 @@
+.footer {
+  background: $white;
+  box-shadow: 0 2px 5px rgba($black, 0.05);
+  font-size: rem(13);
+
+  &__main,
+  &__bottom {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: center;
+    border-top: 1px solid #F6F6F6;
+  }
+
+  &__main {
+    flex-wrap: wrap;
+    padding: 60px 0;
+
+    .navigation {
+      margin: 0 30px;
+      font-weight: map-get($font-weights, medium);
+    }
+  }
+
+  &__bottom {
+    height: 80px;
+  }
+
+  &__copyright {
+    margin: 0 20px;
+    font-family: map-get($fonts, header);
+
+    a {
+      color: map-get($text-colors, primary);
+      font-weight: map-get($font-weights, medium);
+      text-decoration: none;
+    }
+  }
+
+  .container {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .subscribe-form {
+    position: relative;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    max-width: 400px;
+    margin: 40px 0 0;
+
+    &,
+    .form-group,
+    .input {
+      width: 100%;
+    }
+
+    .button {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+    }
+  }
+
+  @media (max-width: 768px) {
+    &__main,
+    &__bottom {
+      .container {
+        flex-direction: column;
+      }
+    }
+
+    &__main {
+      .navigation {
+        margin: 0 0 20px;
+
+        &:last-of-type {
+          margin: 0;
+        }
+      }
+    }
+  }
+}

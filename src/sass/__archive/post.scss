@@ -1,0 +1,220 @@
+// Helpers
+@import './helpers/colors';
+@import './helpers/fonts';
+@import './helpers/functions';
+
+// Article (Block)
+.post {
+  width: 80%;
+  max-width: 960px;
+  margin: 0 auto 40px;
+}
+
+// Article (Elements)
+.post {
+  &__header {
+    position: relative;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    background-size: cover;
+    height: 400px;
+    border-bottom: 1px solid #F6F6F6;
+    border-radius: 6px 6px 0 0;
+    padding: 40px;
+    box-sizing: border-box;
+    text-align: center;
+    overflow: hidden;
+
+    .button {
+      position: absolute;
+      top: 40px;
+      right: 40px;
+      color: map-get($text-colors, primary);
+    }
+  }
+
+  &__label {
+    background: map-get($theme-colors, primary);
+    height: 24px;
+    border-radius: 4px;
+    margin: 0 0 40px;
+    padding: 0 10px;
+    color: $white;
+    font-family: map-get($fonts, header);
+    font-size: rem(10);
+    font-weight: map-get($font-weights, bold);
+    line-height: 24px;
+    text-transform: uppercase;
+  }
+
+  &__title {
+    max-width: 540px;
+    margin: 0 0 40px;
+    text-align: center;
+  }
+
+  &__date {
+    font-family: map-get($fonts, header);
+    font-weight: map-get($font-weights, medium);
+  }
+
+  &__content {
+    padding: 80px 120px;
+  }
+
+  &__author {
+    border-top: 1px solid #F6F6F6;
+    padding: 80px;
+  }
+
+  .author {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+
+    &__name {
+      margin: 0 0 10px;
+      font-weight: map-get($font-weights, medium);
+    }
+
+    &__image {
+      width: 120px;
+      min-width: 120px;
+      height: 120px;
+      border-radius: 100%;
+      margin: 0 40px 0 0;
+      overflow: hidden;
+
+      img {
+        display: block;
+        width: 100%;
+      }
+    }
+
+    &__bio {
+      margin: 0 0 20px;
+    }
+
+    .navigation {
+      &__item {
+        flex-wrap: nowrap;
+
+        span {
+          &:last-of-type {
+            margin: 0 0 0 10px;
+          }
+
+          &:only-child {
+            margin: 0;
+          }
+        }
+      }
+    }
+  }
+
+  &__footer {
+    border-top: 1px solid #F6F6F6;
+    padding: 40px 80px;
+
+    .tags {
+      .button {
+        margin: 0 10px 0 0;
+        color: map-get($text-colors, secondary);
+      }
+    }
+  }
+}
+
+// Article (Modifiers)
+.post {
+  &.has-thumbnail {
+    .post {
+      &__header {
+        position: relative;
+        color: $white;
+
+        &:before {
+          content: '';
+          z-index: 1;
+          position: absolute;
+          display: block;
+          background: rgba(#333333, 0.5);
+          width: 100%;
+          height: 100%;
+        }
+
+        * {
+          z-index: 2;
+        }
+
+        .button {
+          box-shadow: 0 0 0 1px $white;
+          color: $white;
+        }
+      }
+
+      &__title {
+        color: inherit;
+      }
+    }
+  }
+}
+
+
+
+@media (max-width: 960px) {
+  .header {
+    margin: 0;
+  }
+
+  .post {
+    width: 100%;
+    margin: 0;
+
+    &,
+    &__header {
+      border-radius: 0;
+    }
+
+    &__content {
+      padding: 80px;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .post {
+    &__content,
+    &__author {
+      padding: 40px;
+    }
+
+    .author {
+      flex-direction: column;
+
+      &__image {
+        margin: 0 0 40px;
+      }
+
+      .navigation {
+        &__menu {
+          align-items: flex-start;
+          flex-wrap: wrap;
+        }
+
+        &__item {
+          width: 100%;
+          margin: 0;
+
+          &:nth-last-child(2),
+          &:last-child {
+            width: auto;
+            margin: 0 20px 0 0;
+          }
+        }
+      }
+    }
+  }
+}
